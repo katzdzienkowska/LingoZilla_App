@@ -9,10 +9,10 @@ app.use(cors());
 
 MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     .then((client) => {
-        const db = client.db('education_hub');
-        const educationCollection = db.collection('education');
-        const educationRouter = createRouter(educationCollection);
-        app.use('/api/education', educationRouter);
+        const db = client.db('lingozilla');
+        const feedbackCollection = db.collection('feedback');
+        const feedbackRouter = createRouter(feedbackCollection);
+        app.use('/api/feedback', feedbackRouter);
     });
 
 app.listen(9000, function () {
