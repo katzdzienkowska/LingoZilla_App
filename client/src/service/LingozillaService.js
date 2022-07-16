@@ -21,3 +21,12 @@ export const deleteFeedback = (id) => {
         method: 'DELETE'
     });
 };
+
+export const updateFeedback = (feedback) => {
+    return fetch(baseURL + feedback._id, {
+        method: 'PUT',
+        body: JSON.stringify(feedback),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(res => res.json())
+}
