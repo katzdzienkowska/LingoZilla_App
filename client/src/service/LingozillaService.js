@@ -13,4 +13,11 @@ export const postFeedback = (feedback) => {
     })
         .then(res => res.json())
 
-}
+};
+
+
+export const deleteFeedback = (id) => {
+    return fetch(baseURL + id, {
+        method: 'DELETE'
+    });
+};
