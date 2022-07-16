@@ -6,13 +6,13 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <main>
       <Header />
 
       <LingoZillaContainer />
 
       <Footer />
-    </div>
+    </main>
   );
 }
 

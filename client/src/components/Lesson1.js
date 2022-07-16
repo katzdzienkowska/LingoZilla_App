@@ -1,5 +1,5 @@
 import React from 'react';
-import lessonOne from '../data/Data';
+import {lessonOne} from '../data/data';
 import Lesson1Item from './Lesson1Item'
 
 const Lesson1 = () => { 
@@ -12,6 +12,8 @@ const Lesson1 = () => {
 
     return(
         <>
+            <h1>Lesson One: Farm Animals</h1>
+            <p>short desc of the lesson to be added</p>
             {animalsList}
         </>
     );

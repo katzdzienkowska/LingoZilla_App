@@ -1,5 +1,6 @@
 import React from 'react' 
 import Header from '../components/Header';
+import Lesson1 from '../components/Lesson1';
 
 const LingoZilla = () => { 
 
@@ -10,7 +11,9 @@ const LingoZilla = () => {
 
 
     return (
-         null
+        <section>
+            <Lesson1 />
+        </section>
     )
 
 }
