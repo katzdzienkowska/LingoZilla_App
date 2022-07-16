@@ -10,6 +10,7 @@ import dog_img from '../images/dog.png'
 
 
 export const lessonOne = [
+
     {
         id: '1_horl1', 
         animal: 'Horse', 
@@ -177,3 +178,4 @@ export const lessonThree = [
         image: pig_img
     },
 ];
+
