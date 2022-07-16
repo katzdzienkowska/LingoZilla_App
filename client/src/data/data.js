@@ -8,7 +8,7 @@ import cow_img from '../images/cow.png'
 import pig_img from '../images/pig.png'
 import dog_img from '../images/dog.png'
 
-
+// games data to be hardcoded in the game.js files or here? - to be decided
 
 const lessonOne = [
     {
@@ -82,3 +82,4 @@ const lessonThree = [
         id: '6_Pigl3', animal: 'Pig', sentence1:'This is a pig.', sentence1Tra: 'To jest świnia.', sentence2:'This pig is pink.', sentence2Tra: 'Ta świnia jest różowa.', image: pig_img
     },
 ];
+
