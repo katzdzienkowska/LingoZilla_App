@@ -45,7 +45,7 @@ const createRouter = function (collection) {
             });
     });
 
-    router.delete('/id:', (req, res) => {
+    router.delete('/:id', (req, res) => {
         const id = req.params.id;
         collection
             .deleteOne({ _id: ObjectID(id) })
@@ -59,7 +59,7 @@ const createRouter = function (collection) {
             });
     });
 
-    router.put('/id:', (req, res) => {
+    router.put('/:id', (req, res) => {
         const id = req.params.id;
         const updatedData = req.body;
         collection
