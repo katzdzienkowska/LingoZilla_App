@@ -4,13 +4,13 @@ import './lesson1.css';
 const Lesson1Item = ({animal}) => { 
     return(
         <div>
-            <div>
-                <img src={ animal.image } alt={ animal.en }/>
+            <div className='animal-card'>
+                <img className='animal-image' src={ animal.image } alt={ animal.en }/>
+                <p className='image-hover'>{ animal.pl }</p>
+            </div>
+            <div className='animal-name-en'>
                 <h2>{ animal.en }</h2>
-            </div>
-            <div>
-                <h1>{ animal.pl }</h1>
-            </div>
+            </div>        
         </div>
     );
 };
