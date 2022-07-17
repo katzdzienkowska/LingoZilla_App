@@ -4,6 +4,7 @@ import LingoZillaContainer from "./container/LingoZillaContainer";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FeedBackForm from "./components/FeedBackForm";
+import Game2 from "./components/Game2";
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([]);
