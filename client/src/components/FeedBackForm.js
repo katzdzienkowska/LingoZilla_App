@@ -83,7 +83,9 @@ const FeedBackForm = ({ addFeedback }) => {
   const [formData, setFormData] = useState({
     name: "",
     ageGroup: "",
+    rating: "",
     feedback: "",
+    date: "",
   });
 
   const handleSubmit = (event) => {
@@ -91,10 +93,13 @@ const FeedBackForm = ({ addFeedback }) => {
     postFeedback(formData).then((data) => {
       addFeedback(data);
     });
+    alert("Thanks for your feedback!");
     setFormData({
       name: "",
       ageGroup: "",
+      rating: "",
       feedback: "",
+      date: "",
     });
   };
 
@@ -129,6 +134,19 @@ const FeedBackForm = ({ addFeedback }) => {
           </Select>
         </div>
         <div className="wrapper">
+          <Label for="rating">Rating</Label>
+          <input type="radio" id="1-star" name="rating" />
+          <label for="1-star">1 Star</label>
+          <input type="radio" id="2-stars" name="rating" />
+          <label for="2-stars">2 Stars</label>
+          <input type="radio" id="3-stars" name="rating" />
+          <label for="3-stars">3 Stars</label>
+          <input type="radio" id="4-stars" name="rating" />
+          <label for="4-stars">4 Stars</label>
+          <input type="radio" id="5-stars" name="rating" />
+          <label for="5-stars">5 Stars</label>
+        </div>
+        <div className="wrapper">
           <Label for="feedback">Feedback</Label>
           <TextArea
             onChange={onChange}
@@ -138,6 +156,16 @@ const FeedBackForm = ({ addFeedback }) => {
             value={formData.feedback}
             rows="4"
             cols="50"
+          />
+        </div>
+        <div className="wrapper">
+          <Label for="date">Date</Label>
+          <Input
+            onChange={onChange}
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
           />
         </div>
         <SubmitButton type="submit" value="Submit" id="submit" />
