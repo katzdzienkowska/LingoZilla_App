@@ -12,7 +12,7 @@ const Lesson2 = () => {
 
     return(
         <>
-            <h1>Lesson One: Farm Animals</h1>
+            <h1>Lesson Two: Farm Animals</h1>
             <p>short desc of the lesson to be added</p>
             {animalsList2}
         </>
