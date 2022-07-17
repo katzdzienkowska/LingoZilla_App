@@ -12,6 +12,7 @@ import cow_pl from '../images/cow_pl.png'
 import pig_pl from '../images/pig_pl.png'
 import dog_pl from '../images/dog_pl.png'
 import cover from '../images/farm.png'
+import './game1mc.css';
 
 const cards = [
     {
@@ -131,14 +132,14 @@ const GameOne = () => {
 
     return (
         <div>
-            <div>
+            <div className='memory-game-container'>
                 <h2>Memory Game</h2>
                 <p>Game 1 Memory Game description placeholder</p>
-                <div>
+                <div className="memory-game-cards">
                     {cardsList?.map((card, index) => {
                         return (
-                            <div key={index} onClick={() => flipCard(card, index)}>
-                                <img src={onCardSelect(card, index) ? card.img : cardCover} alt='cover image'/>
+                            <div className='cardImage' key={index} onClick={() => flipCard(card, index)}>
+                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover image'/>
                             </div>
                         )
                     })}
