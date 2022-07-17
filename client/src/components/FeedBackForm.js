@@ -135,7 +135,7 @@ const FeedBackForm = ({ addFeedback }) => {
         </div>
         <div className="wrapper">
           <Label for="rating">Rating</Label>
-          <input type="radio" id="1-star" name="rating" />
+          <input type="radio" id="1-star" name="rating" value="1-star" />
           <label for="1-star">1 Star</label>
           <input type="radio" id="2-stars" name="rating" />
           <label for="2-stars">2 Stars</label>
