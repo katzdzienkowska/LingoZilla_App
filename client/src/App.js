@@ -21,6 +21,8 @@ function App() {
 
       <Router> 
        <NavBar  />
+
+
        <LingoZillaContainer />
 
       <Routes>
