@@ -64,17 +64,17 @@ const Quiz = () => {
                 { id: 0, text: "Owca", isCorrect: true },
                 { id: 1, text: "Kogut", isCorrect: false },
                 { id: 2, text: "Świnia", isCorrect: false },
-                { id: 3, text: "", isCorrect: false },
+                { id: 3, text: "Pies", isCorrect: false },
             ],
         },
-    ];
+    ]
     // Click answer and set score
     const optionClicked = (isCorrect) => {
         if (isCorrect) {
             setScore(score + 1);
         }
         if (currentQuestion + 1 < questions.length) {
-            setCurrentQuestion(currentQuestion + 1);
+            setCurrentQuestion(currentQuestion + 1)
         } else {
             setShowResults(true);
         }
@@ -119,7 +119,7 @@ const Quiz = () => {
                                     {option.text}
                                 </li>
                             );
-                        })};
+                        })}
                     </ul>
                 </div>
             )}
