@@ -2,31 +2,32 @@
 /* text-to-speach to be added - on hover + click on the Polish name */
 
 .animal-card {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-    text-align: center
-  }
-  
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  text-align: center
+}
+
 .animal-image {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-  }
-  
+  width: 400px;
+  height: 400px;
+  position: absolute;
+}
+
 .animal-image:hover {
-    opacity: 0;
-    transition: 0.4s;
-  }
-  
+  opacity: 0;
+  transition: 0.4s;
+}
+
 .image-hover {
-    z-index: -1;
-    width: 420px;
-    line-height: 20px;
-    display: inline-block;
-    padding: 160px 0px;
-    vertical-align: middle;
-    height: 450px;
-    font-size: 50px;
-  }
+  z-index: -1;
+  width: 420px;
+  line-height: 20px;
+  display: inline-block;
+  padding: 160px 0px;
+  vertical-align: middle;
+  height: 450px;
+  font-size: 30px;
+
+}
