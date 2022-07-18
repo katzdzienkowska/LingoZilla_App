@@ -41,7 +41,7 @@ const LingoZilla = () => {
 
             </ul>
 
-            <ul className='quiz'>
+            <ul className='quiz-box'>
 
                 <Link to="/quiz" > Quiz </Link>
 

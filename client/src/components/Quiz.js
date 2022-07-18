@@ -93,6 +93,30 @@ const Quiz = () => {
 
         <div className='quiz'>
             <h1>LingoZilla Quiz</h1>
+            <h3>Score: {score}</h3>
+
+            {showResults ? (
+                <div className='final-result' >
+                    <h1>Final Results</h1>
+                    <h2>
+                        {score} out of {questions.length} correct - (
+                        {(score / questions.length) * 100} %)
+                        <h2>
+                            <button onClick={() => restartGame()}>Restart game</button>
+                        </div>
+                        ) : (
+                        <div className='question-card'>
+                            <h2>
+                                Question: {currentQuestion + 1} out of {questions.length}
+                            </h2>
+                            <h3 className='question-text'>{questions[currentQuestion].text}</h3>
+
+
+                            )
+                    </h2>
+                    )
+                </h2>
+            )}
 
             <p>
 
