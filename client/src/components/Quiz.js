@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import horse_img from '../images/horse.png'
 import sheep_img from '../images/sheep.png'
 import cat_img from '../images/cat.png'
@@ -9,7 +9,7 @@ import cow_img from '../images/cow.png'
 import pig_img from '../images/pig.png'
 import dog_img from '../images/dog.png'
 
-const quiz = () => {
+const Quiz = () => {
     const [showResults, setShowResults] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -67,13 +67,32 @@ const quiz = () => {
                 { id: 3, text: "", isCorrect: false },
             ],
         },
-    ]
+    ];
+    // Click answer and set score
+    const optionClicked = (isCorrect) => {
+        if (isCorrect) {
+            setScore(score + 1);
+        }
+        if (currentQuestion + 1 < questions.length) {
+            setCurrentQuestion(currentQuestion + 1);
+        } else {
+            setShowResults(true);
+        }
+    };
+
+    // Reset game
+    const restartGame = () => {
+        setScore(0);
+        setCurrentQuestion(0);
+        setShowResults(false);
+    };
 
 
 
     return (
 
-        <div>
+        <div className='quiz'>
+            <h1>LingoZilla Quiz</h1>
 
             <p>
 
@@ -87,5 +106,5 @@ const quiz = () => {
 }
 
 
-export default quiz;
+export default Quiz;
 
