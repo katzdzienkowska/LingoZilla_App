@@ -105,6 +105,7 @@ const FeedBackForm = ({ addFeedback }) => {
 
   const onChange = (event) => {
     const newFormData = Object.assign({}, formData);
+    console.log(event.target.value);
     newFormData[event.target.name] = event.target.value;
     setFormData(newFormData);
   };
@@ -126,7 +127,12 @@ const FeedBackForm = ({ addFeedback }) => {
         <div className="wrapper">
           <Label for="ageGroup">Age Group</Label>
           <Select onChange={onChange} name="ageGroup" id="ageGroup">
-            <option value="under5>">Under 5 years old</option>
+            <option
+              value="under5"
+              selected={formData.ageGroup === "" ? "selected" : ""}
+            >
+              Under 5 years old
+            </option>
             <option value="5-14">5 - 14 years old</option>
             <option value="15-24">15 - 24 years old</option>
             <option value="25-54">25 - 54 years old</option>
@@ -141,6 +147,7 @@ const FeedBackForm = ({ addFeedback }) => {
             id="1-star"
             name="rating"
             value="1-star"
+            checked={formData.rating === "1-star"}
           />
           <label for="1-star">1 Star</label>
           <input
@@ -149,6 +156,7 @@ const FeedBackForm = ({ addFeedback }) => {
             id="2-stars"
             name="rating"
             value="2-stars"
+            checked={formData.rating === "2-stars"}
           />
           <label for="2-stars">2 Stars</label>
           <input
@@ -157,6 +165,7 @@ const FeedBackForm = ({ addFeedback }) => {
             id="3-stars"
             name="rating"
             value="3-stars"
+            checked={formData.rating === "3-stars"}
           />
           <label for="3-stars">3 Stars</label>
           <input
@@ -165,6 +174,7 @@ const FeedBackForm = ({ addFeedback }) => {
             id="4-stars"
             name="rating"
             value="4-stars"
+            checked={formData.rating === "4-stars"}
           />
           <label for="4-stars">4 Stars</label>
           <input
@@ -173,6 +183,7 @@ const FeedBackForm = ({ addFeedback }) => {
             id="5-stars"
             name="rating"
             value="5-stars"
+            checked={formData.rating === "5-stars"}
           />
           <label for="5-stars">5 Stars</label>
         </div>
