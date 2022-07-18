@@ -40,7 +40,7 @@ const Game2 = () => {
         alt={animal.animal}
         width="200"
         onClick={() => {
-          handleButtonClick(animal.pl);
+          handleButtonClick(animal.pl, animal.img);
         }}
       />
     );
