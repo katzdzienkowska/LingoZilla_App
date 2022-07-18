@@ -109,7 +109,9 @@ const Quiz = () => {
                     <h2>
                         Question: {currentQuestion + 1} out of {questions.length}
                     </h2>
-                    <h3 className='question-text'>{questions[currentQuestion].text}</h3>
+                    <h3 className='question-image'> {questions[currentQuestion].image}</h3>
+                    <h3 className='question-text'> {questions[currentQuestion].text}</h3>
+
                     <ul>
                         {questions[currentQuestion].options.map((option) => {
                             return (
