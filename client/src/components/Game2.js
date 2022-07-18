@@ -3,18 +3,16 @@ import { lessonTwo } from "../data/data";
 
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
-  const [currentPrompt, setCurrentPrompt] = useState([]);
+  const [wordPrompt, setWordPrompt] = useState(null);
+  const [imageSelections, setImageSelections] = useState([]);
 
   const imageList = lessonTwo.map((animal) => {
     return (
-      <img
-        src={animal.image}
-        key={animal.id}
-        alt={animal.animal}
-        width="200"
-      ></img>
+      <img src={animal.image} key={animal.id} alt={animal.animal} width="200" />
     );
   });
+
+  const threeImages = imageList.slice(0, 3);
 
   const prompts = lessonTwo.map((animal) => {
     return <span>{animal.pl}</span>;
@@ -31,7 +29,7 @@ const Game2 = () => {
       {/* <button onClick={() => setTotalScore(totalScore + 1)}>Add</button>
       <button onClick={() => setTotalScore(totalScore - 1)}>Subtract</button> */}
 
-      {imageList}
+      {threeImages}
     </div>
   );
 };
