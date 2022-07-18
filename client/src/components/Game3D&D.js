@@ -1,6 +1,6 @@
-import React from 'react' 
+import React from 'react'
 
-const Game3 = () => { 
+const Game3 = () => {
 
 
 
