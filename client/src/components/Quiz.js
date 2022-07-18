@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './quiz.css';
 import horse_img from '../images/horse.png'
 import sheep_img from '../images/sheep.png'
 import cat_img from '../images/cat.png'
