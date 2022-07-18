@@ -17,10 +17,18 @@ import Lesson1 from "./components/Lesson1";
 import Lesson2 from "./components/Lesson2";
 import Lesson3 from "./components/Lesson3";
 
-
+import { useSpeechSynthesis } from "react-speech-kit";
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([]);
+  const { speak, voices } = useSpeechSynthesis();
+
+  const textToSpeech = (word) => {
+    speak({ 
+      text: word, 
+      voice: voices[46] 
+    })
+  }
 
   useEffect(() => {
     getFeedback().then((feedbacks) => setFeedbacks(feedbacks));
@@ -50,11 +58,11 @@ function App() {
 
         <Route path = "feedback" element = {<FeedBackPage/>} />
 
-        <Route path = "lesson1" element = {<Lesson1/>} />
+        <Route path = "lesson1" element = {<Lesson1 textToSpeech={textToSpeech}/>} />
 
-        <Route path = "lesson2" element = {<Lesson2/>} />
+        <Route path = "lesson2" element = {<Lesson2 textToSpeech={textToSpeech}/>} />
 
-        <Route path = "lesson3" element = {<Lesson3/>} />
+        <Route path = "lesson3" element = {<Lesson3 textToSpeech={textToSpeech}/>} />
 
       </Routes>
 
