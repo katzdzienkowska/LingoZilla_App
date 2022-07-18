@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
+import { useSpeechSynthesis } from "react-speech-kit";
+import { getFeedback } from "./service/LingozillaService";
 import "./App.css";
+
 import LingoZillaContainer from "./container/LingoZillaContainer";
 import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import AppAbout from './components/AppAbout'
 
 import FeedBackForm from "./components/FeedBackForm";
-import Game2 from "./components/Game2";
 import FeedBackPage from "./components/FeedBackPage";
-import { getFeedback } from "./service/LingozillaService";
-
-import AppAbout from './components/AppAbout'
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
-import NavBar from "./components/NavBar";
 
 import Lesson1 from "./components/Lesson1";
 import Lesson2 from "./components/Lesson2";
 import Lesson3 from "./components/Lesson3";
 
-import { useSpeechSynthesis } from "react-speech-kit";
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -27,8 +26,8 @@ function App() {
     speak({ 
       text: word, 
       voice: voices[46] 
-    })
-  }
+    }); // voice index number 46 is Polish lang
+  };
 
   useEffect(() => {
     getFeedback().then((feedbacks) => setFeedbacks(feedbacks));
@@ -42,12 +41,10 @@ function App() {
 
   return (
     <div>
-
       <Header />
+      
       <Router> 
        <NavBar  />
-
-
        <LingoZillaContainer />
 
       <Routes>
@@ -65,19 +62,13 @@ function App() {
         <Route path = "lesson3" element = {<Lesson3 textToSpeech={textToSpeech}/>} />
 
       </Routes>
-
-      </Router>
+    </Router>
       <FeedBackForm addFeedback={addFeedback} />
       <FeedBackPage feedbacks={feedbacks} />
     <Footer />
-
-
-
-
-    </div>
     
-
+    </div>
   );
-}
+};
 
 export default App;
