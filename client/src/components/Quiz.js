@@ -107,7 +107,7 @@ const Quiz = () => {
                         {score} out of {questions.length} correct - (
                         {(score / questions.length) * 100} %)
                     </h2>
-                    <button onClick={() => restartGame()}>Restart game</button>
+                    <button onClick={() => restartGame()}>Play Again!</button>
                 </div>
             ) : (
                 <div className='question-card'>
@@ -134,9 +134,6 @@ const Quiz = () => {
         </div>
     )
 }
-
-
-
 
 
 
