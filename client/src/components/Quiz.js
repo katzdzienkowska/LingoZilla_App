@@ -9,6 +9,8 @@ import cow_img from '../images/cow.png'
 import pig_img from '../images/pig.png'
 import dog_img from '../images/dog.png'
 
+
+
 const Quiz = () => {
     const [showResults, setShowResults] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -95,6 +97,8 @@ const Quiz = () => {
             <h1>LingoZilla Quiz</h1>
             <h3>Score: {score}</h3>
 
+
+            {/* Show results or show the question game  */}
             {showResults ? (
                 <div className='final-result' >
                     <h1>Final Results</h1>
@@ -109,9 +113,10 @@ const Quiz = () => {
                     <h2>
                         Question: {currentQuestion + 1} out of {questions.length}
                     </h2>
-                    <h3 className='question-image'> {questions[currentQuestion].image}</h3>
+                    <img className='question-image' src={questions[currentQuestion].image}></img>
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
 
+                    {/* List of answers  */}
                     <ul>
                         {questions[currentQuestion].options.map((option) => {
                             return (
