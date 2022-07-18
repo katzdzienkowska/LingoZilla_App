@@ -42,14 +42,14 @@ function App() {
   return (
     <div>
       <Header />
-
+      
       <Router> 
        <NavBar  />
        <LingoZillaContainer />
 
       <Routes>
 
-        <Route path = "/" element = {<LingoZillaContainer/>}/>
+        {/* <Route path = "/" element = {<LingoZillaContainer/>}/> */}
 
         <Route path = "about" element= {<AppAbout/>}/> 
 
@@ -62,20 +62,13 @@ function App() {
         <Route path = "lesson3" element = {<Lesson3 textToSpeech={textToSpeech}/>} />
 
       </Routes>
-
-
     </Router>
       <FeedBackForm addFeedback={addFeedback} />
       <FeedBackPage feedbacks={feedbacks} />
     <Footer />
-
-
-
-
-    </div>
     
-
+    </div>
   );
-}
+};
 
 export default App;
