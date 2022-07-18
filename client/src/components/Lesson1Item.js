@@ -1,16 +1,18 @@
 import React from 'react';
-import { useSpeechSynthesis } from "react-speech-kit";
 import './lesson1.css';
 
-const Lesson1Item = ({animal}) => { 
+const Lesson1Item = ({animal, textToSpeech}) => { 
 
-    const { speak, voices } = useSpeechSynthesis();
-    const word = animal.pl;
+
+    const handleSpeech = () => {
+        const word = animal.pl;
+        textToSpeech(word)
+    };
 
     return(
         <div>
             <div className='animal-card'>
-                <img className='animal-image' onClick={() => speak({ text: word, voice: voices[46] })} src={ animal.image } alt={ animal.en }/>
+                <img className='animal-image' onClick={handleSpeech} src={ animal.image } alt={ animal.en }/>
                 <p className='image-hover'>{ animal.pl }</p>
             </div>
             <div className='animal-name-en'>

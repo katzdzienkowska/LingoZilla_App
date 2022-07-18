@@ -3,11 +3,11 @@ import {lessonOne} from '../data/data';
 import Lesson1Item from './Lesson1Item';
 import GameOne from './Game1MC'
 
-const Lesson1 = () => { 
+const Lesson1 = ({textToSpeech}) => { 
 
     const animalsList = lessonOne.map((animal, index) => {
         return(
-            <Lesson1Item animal={animal} key={animal.id} index={index} />
+            <Lesson1Item animal={animal} key={animal.id} index={index} textToSpeech={textToSpeech}/>
         );
     });
 
