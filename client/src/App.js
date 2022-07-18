@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import LingoZillaContainer from "./container/LingoZillaContainer";
 import Header from "./components/Header";
@@ -13,6 +13,14 @@ import Lesson3 from "./components/Lesson3";
 
 
 function App() {
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  const addFeedback = (feedback) => {
+    let temp = feedbacks.map((f) => f);
+    temp.push(feedback);
+    setFeedbacks(temp);
+  };
+
   return (
     <div>
 
