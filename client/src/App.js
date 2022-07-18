@@ -10,12 +10,13 @@ import FeedBackPage from "./components/FeedBackPage";
 import { getFeedback } from "./service/LingozillaService";
 
 import AppAbout from './components/AppAbout'
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./components/NavBar";
 
 import Lesson1 from "./components/Lesson1";
 import Lesson2 from "./components/Lesson2";
 import Lesson3 from "./components/Lesson3";
+import Quiz from "./components/Quiz";
 
 
 
@@ -38,44 +39,46 @@ function App() {
       <Header />
 
 
- 
-  
-
-
-      <Router> 
-       <NavBar  />
-
-
-       <LingoZillaContainer />
-
-      <Routes>
-
-        <Route path = "/" element = {<LingoZillaContainer/>}/>
-
-        <Route path = "about" element= {<AppAbout/>}/> 
-
-        <Route path = "feedback" element = {<FeedBackPage/>} />
-
-        <Route path = "lesson1" element = {<Lesson1/>} />
-
-        <Route path = "lesson2" element = {<Lesson2/>} />
-
-        <Route path = "lesson3" element = {<Lesson3/>} />
-
-      </Routes>
 
 
 
-    </Router>
+
+      <Router>
+        <NavBar />
+
+
+        <LingoZillaContainer />
+
+        <Routes>
+
+          <Route path="/" element={<LingoZillaContainer />} />
+
+          <Route path="about" element={<AppAbout />} />
+
+          <Route path="feedback" element={<FeedBackPage />} />
+
+          <Route path="lesson1" element={<Lesson1 />} />
+
+          <Route path="lesson2" element={<Lesson2 />} />
+
+          <Route path="lesson3" element={<Lesson3 />} />
+
+          <Route path="quiz" element={<Quiz />} />
+
+        </Routes>
+
+
+
+      </Router>
       <FeedBackForm addFeedback={addFeedback} />
       <FeedBackPage feedbacks={feedbacks} />
-    <Footer />
+      <Footer />
 
 
 
 
     </div>
-    
+
 
   );
 }
