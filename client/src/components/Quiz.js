@@ -107,7 +107,7 @@ const Quiz = () => {
                         {score} out of {questions.length} correct - (
                         {(score / questions.length) * 100} %)
                     </h2>
-                    <button onClick={() => restartGame()}>Play Again!</button>
+                    <button className='play' onClick={() => restartGame()}>Play Again!</button>
                 </div>
             ) : (
                 <div className='question-card'>
@@ -118,10 +118,10 @@ const Quiz = () => {
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
 
                     {/* List of answers  */}
-                    <ul>
+                    <ul className='quiz-ul'>
                         {questions[currentQuestion].options.map((option) => {
                             return (
-                                <li
+                                <li className='quiz-list'
                                     key={option.id}
                                     onClick={() => optionClicked(option.isCorrect)} >
                                     {option.text}
