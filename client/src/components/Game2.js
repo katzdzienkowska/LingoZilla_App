@@ -24,8 +24,12 @@ const Game2 = () => {
   }, []);
 
   const handleButtonClick = (word) => {
-    setTotalScore(totalScore + 1);
-    randomizeImages();
+    if (word === wordPrompt) {
+      setTotalScore(totalScore + 1);
+      randomizeImages();
+    } else {
+      setTotalScore(totalScore - 1);
+    }
   };
 
   const animalsImages = imageSelections.map((animal) => {
