@@ -125,22 +125,12 @@ const FeedBackForm = ({ addFeedback }) => {
         </div>
         <div className="wrapper">
           <Label for="ageGroup">Age Group</Label>
-          <Select name="ageGroup" id="ageGroup">
-            <option onChange={onChange} value="under5>">
-              Under 5 years old
-            </option>
-            <option onChange={onChange} value="5-14">
-              5 - 14 years old
-            </option>
-            <option onChange={onChange} value="15-24">
-              15 - 24 years old
-            </option>
-            <option onChange={onChange} value="25-54">
-              25 - 54 years old
-            </option>
-            <option onChange={onChange} value="55+">
-              55+ years old
-            </option>
+          <Select onChange={onChange} name="ageGroup" id="ageGroup">
+            <option value="under5>">Under 5 years old</option>
+            <option value="5-14">5 - 14 years old</option>
+            <option value="15-24">15 - 24 years old</option>
+            <option value="25-54">25 - 54 years old</option>
+            <option value="55+">55+ years old</option>
           </Select>
         </div>
         <div className="wrapper">
