@@ -36,12 +36,6 @@ function App() {
     <div>
 
       <Header />
-
-
- 
-  
-
-
       <Router> 
        <NavBar  />
 
@@ -50,7 +44,7 @@ function App() {
 
       <Routes>
 
-        <Route path = "/" element = {<LingoZillaContainer/>}/>
+        {/* <Route path = "/" element = {<LingoZillaContainer/>}/> */}
 
         <Route path = "about" element= {<AppAbout/>}/> 
 
@@ -64,9 +58,7 @@ function App() {
 
       </Routes>
 
-
-
-    </Router>
+      </Router>
       <FeedBackForm addFeedback={addFeedback} />
       <FeedBackPage feedbacks={feedbacks} />
     <Footer />

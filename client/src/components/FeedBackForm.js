@@ -114,7 +114,7 @@ const FeedBackForm = ({ addFeedback }) => {
       <Form onSubmit={handleSubmit} id="feedback-Form">
         <h2>We'd love to hear some feedback about your lesson!</h2>
         <div className="wrapper">
-          <Label for="name">Name</Label>
+          <Label htmlFor="name">Name</Label>
           <Input
             onChange={onChange}
             type="text"
@@ -124,7 +124,7 @@ const FeedBackForm = ({ addFeedback }) => {
           />
         </div>
         <div className="wrapper">
-          <Label for="ageGroup">Age Group</Label>
+          <Label htmlFor="ageGroup">Age Group</Label>
           <Select onChange={onChange} name="ageGroup" id="ageGroup">
             <option value="under5>">Under 5 years old</option>
             <option value="5-14">5 - 14 years old</option>
@@ -134,7 +134,7 @@ const FeedBackForm = ({ addFeedback }) => {
           </Select>
         </div>
         <div className="wrapper">
-          <Label for="rating">Rating</Label>
+          <Label htmlFor ="rating">Rating</Label>
           <input
             onChange={onChange}
             type="radio"
@@ -142,7 +142,7 @@ const FeedBackForm = ({ addFeedback }) => {
             name="rating"
             value="1-star"
           />
-          <label for="1-star">1 Star</label>
+          <label htmlFor="1-star">1 Star</label>
           <input
             onChange={onChange}
             type="radio"
@@ -150,7 +150,7 @@ const FeedBackForm = ({ addFeedback }) => {
             name="rating"
             value="2-stars"
           />
-          <label for="2-stars">2 Stars</label>
+          <label htmlFor ="2-stars">2 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -158,7 +158,7 @@ const FeedBackForm = ({ addFeedback }) => {
             name="rating"
             value="3-stars"
           />
-          <label for="3-stars">3 Stars</label>
+          <label htmlFor ="3-stars">3 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -166,7 +166,7 @@ const FeedBackForm = ({ addFeedback }) => {
             name="rating"
             value="4-stars"
           />
-          <label for="4-stars">4 Stars</label>
+          <label htmlFor="4-stars">4 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -174,10 +174,10 @@ const FeedBackForm = ({ addFeedback }) => {
             name="rating"
             value="5-stars"
           />
-          <label for="5-stars">5 Stars</label>
+          <label htmlFor="5-stars">5 Stars</label>
         </div>
         <div className="wrapper">
-          <Label for="feedback">Feedback</Label>
+          <Label htmlFor="feedback">Feedback</Label>
           <TextArea
             onChange={onChange}
             type="text"
@@ -189,7 +189,7 @@ const FeedBackForm = ({ addFeedback }) => {
           />
         </div>
         <div className="wrapper">
-          <Label for="date">Date</Label>
+          <Label htmlFor="date">Date</Label>
           <Input
             onChange={onChange}
             type="date"
