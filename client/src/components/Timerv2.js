@@ -20,7 +20,7 @@ const ProgressBar = styled.div`
   );
 `;
 
-const Timerv2 = ({ initialMinutes = 0, initialSeconds = 7 }) => {
+const Timerv2 = ({ initialMinutes = 0, initialSeconds = 2 }) => {
   const [time, setTime] = useState({
     m: initialMinutes,
     s: initialSeconds,
@@ -93,7 +93,10 @@ const Timerv2 = ({ initialMinutes = 0, initialSeconds = 7 }) => {
         {time.m === 0 && time.s === 0 ? (
           <>
             <h1 className="flash-red">Game Over!</h1>
-            <button onClick={restartTimer}>RESTART TIMER</button>
+            <br />
+            <button className="btn-timer" onClick={restartTimer}>
+              RESTART TIMER
+            </button>
           </>
         ) : (
           <h1>
@@ -101,7 +104,9 @@ const Timerv2 = ({ initialMinutes = 0, initialSeconds = 7 }) => {
           </h1>
         )}
       </h1>
-      <button onClick={startTimer}>START TIMER</button>
+      <button className="btn-timer" onClick={startTimer}>
+        START TIMER
+      </button>
     </div>
   );
 };
