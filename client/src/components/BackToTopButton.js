@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaAngleDoubleUp } from 'react-icons/fa'
+import './TopButton.css'
 
 function BackToTopButton() {
     const [backToTopButton, setBackToTopButton] = useState(false);
@@ -24,7 +26,9 @@ function BackToTopButton() {
     return <div >
 
         {backToTopButton && (
-            <button className="scroll" onClick={scrollUp}>^</button>
+            <button className="scroll" onClick={scrollUp} >
+                <FaAngleDoubleUp />
+            </button>
         )}
     </div>
 
