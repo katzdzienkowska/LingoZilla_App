@@ -83,8 +83,19 @@ const Quiz = () => {
         },
         {
 
+            image: pig_img,
+            text: "Match the answer below: This pig is pink.'",
+            options: [
+                { id: 0, text: "Ta świnia jest różowa.", isCorrect: true },
+                { id: 1, text: "Ten indyk jest czarny.", isCorrect: false },
+                { id: 2, text: "Ten koń jest brązowy.", isCorrect: false },
+                { id: 3, text: "Ten kot jest rudy.", isCorrect: false },
+            ],
+        },
+        {
+
             image: sheep_img,
-            text: "What animal is shown above?",
+            text: "Match the answer below:",
             options: [
                 { id: 0, text: "Owca", isCorrect: true },
                 { id: 1, text: "Kogut", isCorrect: false },
@@ -95,7 +106,7 @@ const Quiz = () => {
         {
 
             image: sheep_img,
-            text: "What animal is shown above?",
+            text: "Match the answer below:",
             options: [
                 { id: 0, text: "Owca", isCorrect: true },
                 { id: 1, text: "Kogut", isCorrect: false },
@@ -106,18 +117,7 @@ const Quiz = () => {
         {
 
             image: sheep_img,
-            text: "What animal is shown above?",
-            options: [
-                { id: 0, text: "Owca", isCorrect: true },
-                { id: 1, text: "Kogut", isCorrect: false },
-                { id: 2, text: "Świnia", isCorrect: false },
-                { id: 3, text: "Pies", isCorrect: false },
-            ],
-        },
-        {
-
-            image: sheep_img,
-            text: "What animal is shown above?",
+            text: "Match the answer below:",
             options: [
                 { id: 0, text: "Owca", isCorrect: true },
                 { id: 1, text: "Kogut", isCorrect: false },
