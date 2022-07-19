@@ -46,12 +46,6 @@ const Game2 = () => {
     );
   });
 
-  const prompts = imageSelections.map((animal) => {
-    return <span>{animal.pl}</span>;
-  });
-
-  const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
-
   return (
     <div className="Game2">
       <h2>Game 2: Choose the Right One!</h2>
