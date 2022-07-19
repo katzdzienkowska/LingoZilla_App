@@ -14,13 +14,11 @@ const Lesson2 = ({textToSpeech}) => {
     });
 
     const [isShown, setIsShown] = useState(false);
-
-
+    
     const handleClick = event => {
         setIsShown(true);
     };
     
-
     return(
         <>
             <div>
