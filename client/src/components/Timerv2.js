@@ -20,7 +20,7 @@ const ProgressBar = styled.div`
   );
 `;
 
-const Timerv2 = ({ initialMinutes = 0, initialSeconds = 2 }) => {
+const Timerv2 = ({ initialMinutes, initialSeconds }) => {
   const [time, setTime] = useState({
     m: initialMinutes,
     s: initialSeconds,

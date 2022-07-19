@@ -106,12 +106,14 @@ const Game2 = () => {
         Good luck!
       </h2>
       {!hidden ? (
-        <>
-          <Timerv2 />
-          <p>Current Total Score: {totalScore}</p>
-          <p>Click the picture that is {wordPrompt}!</p>
+        <div className="show-game">
+          <Timerv2 initialMinutes={0} initialSeconds={30} />
+          <h3>Current Total Score: {totalScore}</h3>
+          <p>
+            Click the picture that is <strong>{wordPrompt}</strong>!
+          </p>
           <p>{animalsImages}</p>
-        </>
+        </div>
       ) : null}
       <Button
         onClick={() => {
