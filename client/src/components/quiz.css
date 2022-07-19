@@ -39,6 +39,7 @@
 .quiz-list:hover {
     background-color: #00A6FB;
     color: white;
+    border-color: white;
 }
 
 .final-result {
@@ -61,4 +62,10 @@
     border: 2px solid black;
     border-radius: 20px;
     font-size: 20px;
+}
+
+.play:hover {
+    background-color: #119822;
+    color: white;
+    border-color: white;
 }

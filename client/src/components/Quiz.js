@@ -150,7 +150,7 @@ const Quiz = () => {
     return (
 
         <div className='quiz'>
-            <h1>LingoZilla Quiz</h1>
+
 
 
 
@@ -167,9 +167,10 @@ const Quiz = () => {
                 </div>
             ) : (
                 <div className='question-card'>
-                    <h2>
+                    <h1>LingoZilla Quiz</h1>
+                    <h3>
                         Question: {currentQuestion + 1} out of {questions.length}
-                    </h2>
+                    </h3>
 
                     <img className='question-image' src={questions[currentQuestion].image}></img>
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
