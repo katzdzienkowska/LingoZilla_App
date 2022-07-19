@@ -130,6 +130,8 @@ export const lessonThree = [
         pl1: 'To jest koń.',
         en2: 'This horse is brown.',
         pl2: 'Ten koń jest brązowy.',
+        wordpl: 'Koń',
+        colourpl: 'brązowy', 
         image: horse_img
     },
     {
@@ -139,6 +141,8 @@ export const lessonThree = [
         pl1: 'To jest kot.',
         en2: 'This cat is ginger.',
         pl2: 'Ten kot jest rudy.',
+        wordpl: 'Kot',
+        colourpl: 'rudy', 
         image: cat_img
     },
     {
@@ -148,6 +152,8 @@ export const lessonThree = [
         pl1: 'To jest kogut.',
         en2: 'This rooster is multicoloured.',
         pl2: 'Ten kogut jest kolorowy.',
+        wordpl: 'kogut',
+        colourpl: 'kolorowy', 
         image: rooster_img
     },
     {
@@ -157,6 +163,8 @@ export const lessonThree = [
         pl1: 'To jest królik.',
         en2: 'This rabbit is grey.',
         pl2: 'Ten królik jest szary.',
+        wordpl: 'królik',
+        colourpl: 'szary', 
         image: rabbit_img
     },
     {
@@ -166,6 +174,8 @@ export const lessonThree = [
         pl1: 'To jest indyk.',
         en2: 'This turkey is black.',
         pl2: 'Ten indyk jest czarny.',
+        wordpl: 'indyk',
+        colourpl: 'czarny', 
         image: turkey_img
     },
     {
@@ -175,6 +185,8 @@ export const lessonThree = [
         pl1: 'To jest świnia.',
         en2: 'This pig is pink.',
         pl2: 'Ta świnia jest różowa.',
+        wordpl: 'świnia',
+        colourpl: 'różowa', 
         image: pig_img
     },
 ];

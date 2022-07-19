@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {lessonOne} from "../data/data"; 
 import { lessonTwo } from "../data/data"; 
+import { lessonThree } from "../data/data"; 
 import ColourInPl from "./ColourInPl";
 import WordInPl from "./WordInPl"; 
 import { useDrop } from "react-dnd";
@@ -51,10 +52,11 @@ const Board = () => {
 
 
     const updatedlessonOne = lessonOne.find((word) => id === word.id); 
+    setWordBoard((wordBoard) => [...wordBoard, updatedlessonOne])
 
-    if (updatedlessonOne !== undefined) {
-        setWordBoard((wordBoard) => [...wordBoard, updatedlessonOne])
-    } 
+    // if (updatedlessonOne !== undefined) {
+    //     setWordBoard((wordBoard) => [...wordBoard, updatedlessonOne])
+    // } 
   }; 
 
 
@@ -71,7 +73,7 @@ const Board = () => {
 
 
   const randomizeImages = () => {
-    const data = [...lessonOne];
+    const data = [...lessonThree];
     const randomData = [];
     randomData.push(data.splice(Math.floor(Math.random() * data.length), 1));
     const animalObjects = randomData.flat();
@@ -114,6 +116,17 @@ const Board = () => {
 
   const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
 
+  const handleOnClick = (animalObjects , wordBoard, colourBoard) => { 
+
+    if (animalObjects.wordpl === wordBoard.pl || animalObjects.colourpl === colourBoard.pl) {
+        setTotalScore(totalScore + 1);
+        randomizeImages();
+      } else {
+        setTotalScore(totalScore - 1);
+      }
+  }
+
+
 
 console.log(colourBoard)
 
@@ -136,6 +149,12 @@ console.log(colourBoard)
 
             this is a <span ref={drop}>.................</span> and the colour is 
                 <span ref={dropp} >..................</span>
+
+                <br></br>
+
+            <button onClick={handleOnClick}>Submit</button>  
+
+            <p>    Current Total Score:  {totalScore}  </p>
 
             
             
