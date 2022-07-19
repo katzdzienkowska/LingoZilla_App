@@ -16,6 +16,7 @@ const Board = () => {
   const [imageSelections, setImageSelections] = useState([]);
   const [wordBoard , setWordBoard] = useState([])
   const [colourBoard , setColourBoard] = useState([])
+  
 
   const [{isOver} , drop] = useDrop(() => ({
 
@@ -102,6 +103,8 @@ const Board = () => {
         src={animal.image}
         key={animal.id}
         alt={animal.animal}
+        animalWordPoland = {animal.wordpl}
+        animalColourPoland = {animal.colourpl}
         width="200"
         onClick={() => {
           handleButtonClick(animal.pl);
@@ -116,9 +119,9 @@ const Board = () => {
 
   const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
 
-  const handleOnClick = (animalObjects , wordBoard, colourBoard) => { 
+  const handleOnClick = ({animalsImages} , {wordBoard}, {wordColour}) => { 
 
-    if (animalObjects.wordpl === wordBoard.pl || animalObjects.colourpl === colourBoard.pl) {
+     if (animalsImages.animalWordPoland === wordBoard.pl && animalsImages.animalColourPoland === wordColour.pl) {
         setTotalScore(totalScore + 1);
         randomizeImages();
       } else {
@@ -126,15 +129,29 @@ const Board = () => {
       }
   }
 
+// const handleOnClick = () => { 
+
+//     if ( 4 > 3) {
+//        setTotalScore(totalScore + 1);
+//        randomizeImages();
+//      } else {
+//        setTotalScore(totalScore - 1);
+//      }
+//  }
 
 
-console.log(colourBoard)
+
+
+
+console.log(wordBoard.pl)
 
     return (
         <div className="Board">
 
             <div className="animal">
               {animalsImages}
+
+            
             </div>
 
             <div>
@@ -147,8 +164,8 @@ console.log(colourBoard)
             return <ColourInPl colour={colour}  key={colour.id} index={index} /> })}
             </div>
 
-            this is a <span ref={drop}>.................</span> and the colour is 
-                <span ref={dropp} >..................</span>
+            this is a <span ref={drop}>.................</span> 
+            and the colour is <span ref={dropp}>..................</span>
 
                 <br></br>
 
@@ -156,10 +173,7 @@ console.log(colourBoard)
 
             <p>    Current Total Score:  {totalScore}  </p>
 
-            
-            
-            
-        </div> 
+         </div> 
     )
 }
 
