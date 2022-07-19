@@ -13,15 +13,10 @@ const Lesson1 = ({textToSpeech}) => {
         );
     });
 
-    const [isShown1, setIsShown1] = useState(false);
-    const [isShown2, setIsShown2] = useState(false);
+    const [isShown, setIsShown] = useState(false);
 
-    const handleClick1 = event => {
-        setIsShown1(current => !current);
-    };
-    
-    const handleClick2 = event => {
-        setIsShown2(current => !current);
+    const handleClick = event => {
+        setIsShown(true);
     };
 
     return(
@@ -30,17 +25,17 @@ const Lesson1 = ({textToSpeech}) => {
                 <h1>Lesson One: Farm Animals</h1>
                 <p>short desc of the lesson to be added</p>
                 {animalsList}
-                <button onClick={handleClick1}>Game time!</button>
+                <button onClick={handleClick}>Game time!</button>
             </div>
 
-            {isShown1 && (
+            {isShown && (
             <div>
                 < GameOne />
-                <button onClick={handleClick2}>How was the lesson?</button>
+                <button onClick={handleClick}>How was the lesson?</button>
             </div>
             )}
 
-            {isShown2 && (
+            {isShown && (
             <div>
                 <FeedBackForm/>
                 <button >
