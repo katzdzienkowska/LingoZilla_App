@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { lessonTwo } from "../data/data";
 import Timerv2 from "./Timerv2";
 import styled from "styled-components";
+import "./Game2.css";
 
 const Game2Container = styled.div`
   background: dodgerblue;
@@ -35,11 +36,15 @@ const Button = styled.button`
 `;
 
 const Img = styled.img`
-  margin: 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-  border: 5px solid #885df1;
-  border-radius: 20px;
-  cursor: pointer;
+  & {
+    margin: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border: 5px solid #885df1;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 const Game2 = () => {
@@ -47,6 +52,7 @@ const Game2 = () => {
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
   const [visible, setVisible] = useState(false);
+  const [wobble, setWobble] = useState(0);
 
   const randomizeImages = () => {
     const data = [...lessonTwo];
@@ -65,16 +71,19 @@ const Game2 = () => {
     randomizeImages();
   }, []);
 
-  const handleButtonClick = (word) => {
+  const handleButtonClick = (word, picture) => {
     if (word === wordPrompt) {
       setTotalScore(totalScore + 1);
       randomizeImages();
+    } else {
+      picture(setWobble(1));
     }
   };
 
   const animalsImages = imageSelections.map((animal) => {
     return (
-      <Img
+      <img
+        className="game-img"
         src={animal.image}
         key={animal.id}
         alt={animal.animal}
@@ -82,6 +91,8 @@ const Game2 = () => {
         onClick={() => {
           handleButtonClick(animal.pl, animal.img);
         }}
+        onAnimationEnd={() => setWobble(0)}
+        wobble={wobble}
       />
     );
   });
@@ -90,10 +101,13 @@ const Game2 = () => {
     <Game2Container>
       <Heading>Game 2: Match Race</Heading>
       <h2>
-        Click the picture that matches the word! You get +1 point for every
-        correct answer. See how many points you can get in 30 seconds! <br />
-        Click "Show Game" to open the game then "Start Timer" to begin! <br />{" "}
-        Good luck!
+        <p>
+          Click the picture that matches the word! You get +1 point for every
+          correct answer.{" "}
+        </p>
+        <p>See how many points you can get in 30 seconds!</p>
+        <p>Click "Show Game" to open the game then "Start Timer" to begin!</p>
+        <p>Good luck! 🤞</p>
       </h2>
       <Button onClick={() => setVisible(!visible)}>
         {visible ? "Hide Game" : "Show Game"}
@@ -101,7 +115,7 @@ const Game2 = () => {
       <div style={{ display: visible ? "block" : "none" }}>
         <div className="show-game">
           <Timerv2 initialMinutes={0} initialSeconds={2} />
-          <h3>Current Total Score: {totalScore}</h3>
+          <h2>Total Score: {totalScore}</h2>
           <p>
             Click the picture that is <strong>{wordPrompt}</strong>!
           </p>
