@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import { lessonThree } from '../data/data';
 import Lesson3Item from './Lesson3Item'
 import Game3 from './Game3D&D'
+import FeedBackForm from './FeedBackForm';
 
 const Lesson3 = ({textToSpeech}) => {
 
@@ -11,15 +13,38 @@ const Lesson3 = ({textToSpeech}) => {
         );
     });
 
-    return (
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = event => {
+        setIsShown(true);
+    };
+
+    return(
         <>
-            <h1>Lesson Three: Farm Animals and Colours</h1>
-            <p>short desc of the lesson to be added</p>
-            {animalsList3}
-            <Game3 />
+            <div>
+                <h1>Lesson Three: Farm Animals and Colours</h1>
+                <p>short desc of the lesson to be added</p>
+                {animalsList3}
+                <button onClick={handleClick}>Game time!</button>
+            </div>
+
+            {isShown && (
+            <div>
+                < Game3 />
+                <button onClick={handleClick}>How was the lesson?</button>
+            </div>
+            )}
+
+            {isShown && (
+            <div>
+                <FeedBackForm/>
+                <button >
+                <Link to='/quiz'>Time for a Quiz!</Link>
+                </button>
+            </div>
+            )}
         </>
     );
 };
-
 
 export default Lesson3; 
