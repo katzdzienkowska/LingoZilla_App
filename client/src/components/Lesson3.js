@@ -1,7 +1,9 @@
 import React from 'react';
 import { lessonThree } from '../data/data';
 import Lesson3Item from './Lesson3Item'
-import Game3 from './Game3D&D'
+import Game3 from './Game3';
+import {DndProvider} from 'react-dnd'
+import {HTML5Backend} from 'react-dnd-html5-backend'
 
 const Lesson3 = () => {
 
@@ -16,7 +18,14 @@ const Lesson3 = () => {
             <h1>Lesson Three: Farm Animals and Colours</h1>
             <p>short desc of the lesson to be added</p>
             {animalsList3}
+
+            <h2> Game Three </h2>
+
+            <DndProvider backend={HTML5Backend}>
+
             <Game3 />
+
+            </DndProvider>
         </>
     );
 };
