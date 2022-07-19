@@ -96,7 +96,7 @@ const Quiz = () => {
 
         <div className='quiz'>
             <h1>LingoZilla Quiz</h1>
-            <h3>Score: {score}</h3>
+
 
 
             {/* Show results or show the question game  */}
@@ -107,6 +107,7 @@ const Quiz = () => {
                         {score} out of {questions.length} correct - (
                         {(score / questions.length) * 100} %)
                     </h2>
+
                     <button className='play' onClick={() => restartGame()}>Play Again!</button>
                 </div>
             ) : (
@@ -114,6 +115,7 @@ const Quiz = () => {
                     <h2>
                         Question: {currentQuestion + 1} out of {questions.length}
                     </h2>
+                    <h3>Score: {score}</h3>
                     <img className='question-image' src={questions[currentQuestion].image}></img>
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
 
