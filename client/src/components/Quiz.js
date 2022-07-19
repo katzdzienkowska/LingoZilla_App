@@ -70,6 +70,61 @@ const Quiz = () => {
                 { id: 3, text: "Pies", isCorrect: false },
             ],
         },
+        {
+
+            image: horse_img,
+            text: "Match the answer below: This horse is brown",
+            options: [
+                { id: 0, text: "Ten kogut jest brązowy", isCorrect: false },
+                { id: 1, text: "Ten kot jest rudy", isCorrect: false },
+                { id: 2, text: "Ten koń jest brązowy", isCorrect: true },
+                { id: 3, text: "Ten kot jest czarny", isCorrect: false },
+            ],
+        },
+        {
+
+            image: pig_img,
+            text: "Match the answer below: This pig is pink",
+            options: [
+                { id: 0, text: "Ta świnia jest różowa", isCorrect: true },
+                { id: 1, text: "Ten indyk jest czarny", isCorrect: false },
+                { id: 2, text: "Ten koń jest różowa", isCorrect: false },
+                { id: 3, text: "Ten kot jest rudy", isCorrect: false },
+            ],
+        },
+        {
+
+            image: cat_img,
+            text: "Match the answer below: This cat is ginger",
+            options: [
+                { id: 0, text: "Ten kot jest brązowy", isCorrect: false },
+                { id: 1, text: "Ten kogut jest kolorowy", isCorrect: false },
+                { id: 2, text: "Ten kot jest rudy", isCorrect: true },
+                { id: 3, text: "Ten królik jest szary", isCorrect: false },
+            ],
+        },
+        {
+
+            image: rooster_img,
+            text: "Match the answer below: This rooster is multicoloured",
+            options: [
+                { id: 0, text: "Ten koń jest brązowy", isCorrect: false },
+                { id: 1, text: "Ta świnia jest różowa", isCorrect: false },
+                { id: 2, text: "Ten królik jest szary", isCorrect: false },
+                { id: 3, text: "Ten kogut jest kolorowy", isCorrect: true },
+            ],
+        },
+        {
+
+            image: turkey_img,
+            text: "Match the answer below: This turkey is black",
+            options: [
+                { id: 0, text: "Ten indyk jest czarny", isCorrect: true },
+                { id: 1, text: "Ta świnia jest różowa", isCorrect: false },
+                { id: 2, text: "Ten koń jest brązowy", isCorrect: false },
+                { id: 3, text: "Ten kot jest rudy", isCorrect: false },
+            ],
+        },
     ]
     // Click answer and set score
     const optionClicked = (isCorrect) => {
@@ -95,7 +150,7 @@ const Quiz = () => {
     return (
 
         <div className='quiz'>
-            <h1>LingoZilla Quiz</h1>
+
 
 
 
@@ -112,10 +167,11 @@ const Quiz = () => {
                 </div>
             ) : (
                 <div className='question-card'>
-                    <h2>
+                    <h1>LingoZilla Quiz</h1>
+                    <h3>
                         Question: {currentQuestion + 1} out of {questions.length}
-                    </h2>
-                    <h3>Score: {score}</h3>
+                    </h3>
+
                     <img className='question-image' src={questions[currentQuestion].image}></img>
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
 
