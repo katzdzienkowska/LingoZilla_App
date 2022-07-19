@@ -33,6 +33,11 @@
     font-size: 20px;
 }
 
+.quiz-list:hover {
+    background-color: #00A6FB;
+    color: white;
+}
+
 .final-result {
     margin: 0 auto;
     width: 600px;
