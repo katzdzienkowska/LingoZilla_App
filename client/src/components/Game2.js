@@ -40,17 +40,11 @@ const Game2 = () => {
         alt={animal.animal}
         width="200"
         onClick={() => {
-          handleButtonClick(animal.pl);
+          handleButtonClick(animal.pl, animal.img);
         }}
       />
     );
   });
-
-  const prompts = imageSelections.map((animal) => {
-    return <span>{animal.pl}</span>;
-  });
-
-  const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
 
   return (
     <div className="Game2">
