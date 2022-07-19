@@ -88,7 +88,7 @@ const Quiz = () => {
             options: [
                 { id: 0, text: "Ta świnia jest różowa", isCorrect: true },
                 { id: 1, text: "Ten indyk jest czarny", isCorrect: false },
-                { id: 2, text: "Ten koń jest różowa", isCorrect: false },
+                { id: 2, text: "Ten koń jest różowy", isCorrect: false },
                 { id: 3, text: "Ten kot jest rudy", isCorrect: false },
             ],
         },
