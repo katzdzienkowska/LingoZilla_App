@@ -73,12 +73,11 @@ const GameOne = () => {
     const [score, setScore] = useState(0);
     const [openCards, setOpenCards] = useState([]);
 
-    const gameReady = () => {
-        const shuffledArray = shuffleArray(cards)
-        setCardsList(shuffledArray)
-    };
-
     useEffect(() => {
+        const gameReady = () => {
+            const shuffledArray = shuffleArray(cards)
+            setCardsList(shuffledArray)
+        };
         gameReady()
     }, []);
 
@@ -139,7 +138,7 @@ const GameOne = () => {
                     {cardsList?.map((card, index) => {
                         return (
                             <div className='cardImage' key={index} onClick={() => flipCard(card, index)}>
-                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover image'/>
+                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover'/>
                             </div>
                         )
                     })}
