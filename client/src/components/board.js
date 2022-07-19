@@ -12,7 +12,7 @@ import "../data/data";
 const Board = () => {
 
   const[totalScore, setTotalScore] = useState(0);
-  const [wordPrompt, setWordPrompt] = useState(null);
+//   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
   const [wordBoard , setWordBoard] = useState([])
   const [colourBoard , setColourBoard] = useState([])
@@ -79,23 +79,23 @@ const Board = () => {
     randomData.push(data.splice(Math.floor(Math.random() * data.length), 1));
     const animalObjects = randomData.flat();
     setImageSelections(animalObjects);
-    const animal =
-      animalObjects[Math.floor(Math.random() * animalObjects.length)];
-    setWordPrompt(animal.pl);
+    // const animal =
+    //   animalObjects[Math.floor(Math.random() * animalObjects.length)];
+    // setWordPrompt(animal.pl);
   };
 
   useEffect(() => {
     randomizeImages();
   }, []);
 
-  const handleButtonClick = (word) => {
-    if (word === wordPrompt) {
-      setTotalScore(totalScore + 1);
-      randomizeImages();
-    } else {
-      setTotalScore(totalScore - 1);
-    }
-  };
+//   const handleButtonClick = (word) => {
+//     if (word === wordPrompt) {
+//       setTotalScore(totalScore + 1);
+//       randomizeImages();
+//     } else {
+//       setTotalScore(totalScore - 1);
+//     }
+//   };
 
   const animalsImages = imageSelections.map((animal) => {
     return (
@@ -106,18 +106,18 @@ const Board = () => {
         animalWordPoland = {animal.wordpl}
         animalColourPoland = {animal.colourpl}
         width="200"
-        onClick={() => {
-          handleButtonClick(animal.pl);
-        }}
+        // onClick={() => {
+        //   handleButtonClick(animal.pl);
+        // }}
       />
     );
   });
 
-  const prompts = imageSelections.map((animal) => {
-    return <span>{animal.pl}</span>;
-  });
+//   const prompts = imageSelections.map((animal) => {
+//     return <span>{animal.pl}</span>;
+//   });
 
-  const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
+//   const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
 
   const handleOnClick = () => { 
 
@@ -134,7 +134,7 @@ const Board = () => {
 
 // const handleOnClick = () => { 
 
-//     if ( 4 > 3) {
+//     if ( 4 < 3) {
 //        setTotalScore(totalScore + 1);
 //        randomizeImages();
 //      } else {
