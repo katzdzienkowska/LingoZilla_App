@@ -46,7 +46,7 @@ const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
-  const [hidden, setHidden] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const randomizeImages = () => {
     const data = [...lessonTwo];
@@ -88,10 +88,6 @@ const Game2 = () => {
     );
   });
 
-  const handleShowButton = () => {
-    setHidden((s) => !s);
-  };
-
   const playAgain = () => {
     setTotalScore(0);
   };
@@ -105,7 +101,10 @@ const Game2 = () => {
         Click "Let's Play" to open the game then "Start Timer" to begin! <br />{" "}
         Good luck!
       </h2>
-      {!hidden ? (
+      <Button onClick={() => setVisible(!visible)}>
+        {visible ? "Hide Game" : "Show Game"}
+      </Button>
+      <div style={{ display: visible ? "block" : "none" }}>
         <div className="show-game">
           <Timerv2 initialMinutes={0} initialSeconds={30} />
           <h3>Current Total Score: {totalScore}</h3>
@@ -114,14 +113,7 @@ const Game2 = () => {
           </p>
           <p>{animalsImages}</p>
         </div>
-      ) : null}
-      <Button
-        onClick={() => {
-          handleShowButton();
-        }}
-      >
-        Let's Play!
-      </Button>
+      </div>
     </Game2Container>
   );
 };
