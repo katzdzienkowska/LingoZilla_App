@@ -94,13 +94,13 @@ const Quiz = () => {
         },
         {
 
-            image: sheep_img,
-            text: "Match the answer below:",
+            image: cat_img,
+            text: "Match the answer below: This cat is ginger.",
             options: [
-                { id: 0, text: "Owca", isCorrect: true },
-                { id: 1, text: "Kogut", isCorrect: false },
-                { id: 2, text: "Świnia", isCorrect: false },
-                { id: 3, text: "Pies", isCorrect: false },
+                { id: 0, text: "Ten koń jest brązowy.", isCorrect: false },
+                { id: 1, text: "Ten kogut jest kolorowy.", isCorrect: false },
+                { id: 2, text: "Ten kot jest rudy.", isCorrect: true },
+                { id: 3, text: "Ten królik jest szary.", isCorrect: false },
             ],
         },
         {
