@@ -21,7 +21,7 @@ function BackToTopButton() {
         })
     }
 
-    return <div className="app">
+    return <div >
 
         {backToTopButton && (
             <button className="scroll" onClick={scrollUp}>^</button>
