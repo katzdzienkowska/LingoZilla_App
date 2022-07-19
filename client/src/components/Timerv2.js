@@ -5,7 +5,7 @@ import "./Timerv2.css";
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 50px;
-  background: black;
+  background: #c8e2fb;
 `;
 
 const ProgressBar = styled.div`
@@ -60,6 +60,7 @@ const Timerv2 = ({ initialMinutes = 0, initialSeconds = 2 }) => {
 
         if (time.s === 0) {
           if (time.m === 0) {
+            alert("Game Over!");
             clearInterval(myInterval);
           } else if (time.m > 0) {
             updatedTime.m--;
@@ -71,7 +72,7 @@ const Timerv2 = ({ initialMinutes = 0, initialSeconds = 2 }) => {
       });
     }, 1000);
     setTimer(myInterval);
-    setRunning(!running);
+    setRunning(true);
   };
 
   const restartTimer = () => {

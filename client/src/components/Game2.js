@@ -34,6 +34,14 @@ const Button = styled.button`
   }
 `;
 
+const Img = styled.img`
+  margin: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 5px solid #885df1;
+  border-radius: 20px;
+  cursor: pointer;
+`;
+
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
@@ -68,11 +76,11 @@ const Game2 = () => {
 
   const animalsImages = imageSelections.map((animal) => {
     return (
-      <img
+      <Img
         src={animal.image}
         key={animal.id}
         alt={animal.animal}
-        width="200"
+        width="500"
         onClick={() => {
           handleButtonClick(animal.pl, animal.img);
         }}
@@ -94,7 +102,7 @@ const Game2 = () => {
       <h2>
         Click the picture that matches the word! You get +1 point for every
         correct answer. See how many points you can get in 30 seconds! <br />
-        Click "Let's Play to open the game then "Start Timer" to begin! <br />{" "}
+        Click "Let's Play" to open the game then "Start Timer" to begin! <br />{" "}
         Good luck!
       </h2>
       {!hidden ? (
