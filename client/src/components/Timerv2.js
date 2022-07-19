@@ -30,6 +30,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(0);
   const [intervalId, setIntervalId] = useState(0);
+  const [isShown, setIsShown] = useState(true);
 
   useEffect(() => {
     if (running) {
@@ -60,7 +61,9 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
 
         if (time.s === 0) {
           if (time.m === 0) {
-            alert("Game Over!");
+            alert(
+              "Game Over! Don't forget to check your total score to see how you did"
+            );
             clearInterval(myInterval);
           } else if (time.m > 0) {
             updatedTime.m--;
@@ -73,6 +76,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
     }, 1000);
     setTimer(myInterval);
     setRunning(true);
+    setIsShown(false);
   };
 
   const restartTimer = () => {
@@ -83,6 +87,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
       m: initialMinutes,
       s: initialSeconds,
     });
+    setIsShown(true);
   };
 
   return (
@@ -105,9 +110,13 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
           </h1>
         )}
       </h1>
-      <button className="btn-timer" onClick={startTimer}>
-        START TIMER
-      </button>
+      {isShown && (
+        <>
+          <button className="btn-timer" onClick={startTimer}>
+            START TIMER
+          </button>
+        </>
+      )}
     </div>
   );
 };

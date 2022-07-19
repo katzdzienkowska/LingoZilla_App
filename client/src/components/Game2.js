@@ -69,8 +69,6 @@ const Game2 = () => {
     if (word === wordPrompt) {
       setTotalScore(totalScore + 1);
       randomizeImages();
-    } else {
-      setTotalScore(totalScore - 1);
     }
   };
 
@@ -88,17 +86,13 @@ const Game2 = () => {
     );
   });
 
-  const playAgain = () => {
-    setTotalScore(0);
-  };
-
   return (
     <Game2Container>
-      <Heading>Game 2: Choose the Right One!</Heading>
+      <Heading>Game 2: Match Race</Heading>
       <h2>
         Click the picture that matches the word! You get +1 point for every
         correct answer. See how many points you can get in 30 seconds! <br />
-        Click "Let's Play" to open the game then "Start Timer" to begin! <br />{" "}
+        Click "Show Game" to open the game then "Start Timer" to begin! <br />{" "}
         Good luck!
       </h2>
       <Button onClick={() => setVisible(!visible)}>
@@ -106,7 +100,7 @@ const Game2 = () => {
       </Button>
       <div style={{ display: visible ? "block" : "none" }}>
         <div className="show-game">
-          <Timerv2 initialMinutes={0} initialSeconds={30} />
+          <Timerv2 initialMinutes={0} initialSeconds={2} />
           <h3>Current Total Score: {totalScore}</h3>
           <p>
             Click the picture that is <strong>{wordPrompt}</strong>!
