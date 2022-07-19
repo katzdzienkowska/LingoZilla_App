@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { lessonTwo } from "../data/data";
 import ProgressTimer from "react-progress-bar-timer";
+import Timerv2 from "./Timerv2";
 
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
   const [hidden, setHidden] = useState(true);
+  const [startTimer, setStartTimer] = useState(false);
 
   const randomizeImages = () => {
     const data = [...lessonTwo];
@@ -48,23 +50,28 @@ const Game2 = () => {
     );
   });
 
-  const stopGame = () => {
-    return "Game Over";
+  const handleShowButton = () => {
+    setHidden((s) => !s);
+    setStartTimer(true);
+  };
+
+  const playAgain = () => {
+    setStartTimer(false);
+    setTotalScore(0);
   };
 
   return (
     <div className="Game2">
       <h2>Game 2: Choose the Right One!</h2>
       <p>Insert Game Description Here</p>
+      <Timerv2 />
       {!hidden ? (
         <>
           <ProgressTimer
-            buttonText="Start"
-            direction="right"
-            duration={10}
-            onFinish={stopGame()}
+            color="#c200f2"
+            duration={5}
+            onFinish={function noRefCheck() {}}
             showDuration
-            started={false}
             variant="fill"
           />
           <p>Current Total Score: {totalScore}</p>
@@ -72,7 +79,13 @@ const Game2 = () => {
           {animalsImages}
         </>
       ) : null}
-      <button onClick={() => setHidden((s) => !s)}>Let's Play!</button>
+      <button
+        onClick={() => {
+          handleShowButton();
+        }}
+      >
+        Let's Play!
+      </button>
     </div>
   );
 };
