@@ -22,8 +22,10 @@ const Lesson1 = ({textToSpeech}) => {
     return(
         <>
             <div>
-                <h1>Lesson One: Farm Animals</h1>
-                <p>short desc of the lesson to be added</p>
+                <h1>Lesson 1:</h1>
+                <h2>Let's start with learning farm animals names in Polish</h2>
+                    <p>Hover over the animal image to learn its name in Polish.</p>
+                    <p>Hint! If you click on the Polish word, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</p>
                 {animalsList}
                 <button onClick={handleClick}>Game time!</button>
             </div>
@@ -31,7 +33,7 @@ const Lesson1 = ({textToSpeech}) => {
             {isShown && (
             <div>
                 < GameOne />
-                <button onClick={handleClick}>How was the lesson?</button>
+                <button onClick={handleClick}>Did you like the lesson?</button>
             </div>
             )}
 
@@ -39,7 +41,7 @@ const Lesson1 = ({textToSpeech}) => {
             <div>
                 <FeedBackForm/>
                 <button >
-                <Link to='/lesson2'>Go to lesson 2</Link>
+                <Link to='/lesson2'>Go to level 2</Link>
                 </button>
             </div>
             )}

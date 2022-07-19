@@ -22,8 +22,10 @@ const Lesson3 = ({textToSpeech}) => {
     return(
         <>
             <div>
-                <h1>Lesson Three: Farm Animals and Colours</h1>
-                <p>short desc of the lesson to be added</p>
+                <h1>Lesson 3:</h1>
+                <h2>Let's revise previous lessons and throw in some basic Polish grammar.</h2>
+                    <p>Have a look at the images and their descriptions. First pair of sentences describes what is the animal, in English and then in Polish. The second pair tells you the colour of the animal. </p>
+                    <p>Hint! If you click on the Polish sentence, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</p>
                 {animalsList3}
                 <button onClick={handleClick}>Game time!</button>
             </div>
@@ -31,7 +33,7 @@ const Lesson3 = ({textToSpeech}) => {
             {isShown && (
             <div>
                 < Game3 />
-                <button onClick={handleClick}>How was the lesson?</button>
+                <button onClick={handleClick}>Did you like the lesson?</button>
             </div>
             )}
 
