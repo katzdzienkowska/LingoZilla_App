@@ -119,14 +119,17 @@ const Board = () => {
 
   const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
 
-  const handleOnClick = ({animalsImages} , {wordBoard}, {wordColour}) => { 
+  const handleOnClick = () => { 
 
-     if (animalsImages.animalWordPoland === wordBoard.pl && animalsImages.animalColourPoland === wordColour.pl) {
+     if (animalsImages.animalWordPoland === wordBoard.pl && animalsImages.animalColourPoland === colourBoard.pl) {
         setTotalScore(totalScore + 1);
         randomizeImages();
       } else {
         setTotalScore(totalScore - 1);
       }
+
+      setColourBoard([])
+      setWordBoard([])
   }
 
 // const handleOnClick = () => { 
