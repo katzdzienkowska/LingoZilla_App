@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { lessonTwo } from "../data/data";
-import ProgressTimer from "react-progress-bar-timer";
 import Timerv2 from "./Timerv2";
 
 const Game2 = () => {
@@ -8,7 +7,6 @@ const Game2 = () => {
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
   const [hidden, setHidden] = useState(true);
-  const [startTimer, setStartTimer] = useState(false);
 
   const randomizeImages = () => {
     const data = [...lessonTwo];
@@ -52,11 +50,9 @@ const Game2 = () => {
 
   const handleShowButton = () => {
     setHidden((s) => !s);
-    setStartTimer(true);
   };
 
   const playAgain = () => {
-    setStartTimer(false);
     setTotalScore(0);
   };
 
@@ -67,13 +63,6 @@ const Game2 = () => {
       <Timerv2 />
       {!hidden ? (
         <>
-          <ProgressTimer
-            color="#c200f2"
-            duration={5}
-            onFinish={function noRefCheck() {}}
-            showDuration
-            variant="fill"
-          />
           <p>Current Total Score: {totalScore}</p>
           <p>Click the picture that is {wordPrompt}!</p>
           {animalsImages}
