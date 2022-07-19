@@ -35,18 +35,6 @@ const Button = styled.button`
   }
 `;
 
-const Img = styled.img`
-  & {
-    margin: 10px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    border: 5px solid #885df1;
-    border-radius: 20px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-  }
-`;
-
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
