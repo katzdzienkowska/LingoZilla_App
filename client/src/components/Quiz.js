@@ -70,6 +70,61 @@ const Quiz = () => {
                 { id: 3, text: "Pies", isCorrect: false },
             ],
         },
+        {
+
+            image: horse_img,
+            text: "Match the answer below: This horse is brown.",
+            options: [
+                { id: 0, text: "Ten kogut jest kolorowy.", isCorrect: false },
+                { id: 1, text: "Ten kot jest rudy.", isCorrect: false },
+                { id: 2, text: "Ten koń jest brązowy.", isCorrect: true },
+                { id: 3, text: "Ten indyk jest czarny.", isCorrect: false },
+            ],
+        },
+        {
+
+            image: sheep_img,
+            text: "What animal is shown above?",
+            options: [
+                { id: 0, text: "Owca", isCorrect: true },
+                { id: 1, text: "Kogut", isCorrect: false },
+                { id: 2, text: "Świnia", isCorrect: false },
+                { id: 3, text: "Pies", isCorrect: false },
+            ],
+        },
+        {
+
+            image: sheep_img,
+            text: "What animal is shown above?",
+            options: [
+                { id: 0, text: "Owca", isCorrect: true },
+                { id: 1, text: "Kogut", isCorrect: false },
+                { id: 2, text: "Świnia", isCorrect: false },
+                { id: 3, text: "Pies", isCorrect: false },
+            ],
+        },
+        {
+
+            image: sheep_img,
+            text: "What animal is shown above?",
+            options: [
+                { id: 0, text: "Owca", isCorrect: true },
+                { id: 1, text: "Kogut", isCorrect: false },
+                { id: 2, text: "Świnia", isCorrect: false },
+                { id: 3, text: "Pies", isCorrect: false },
+            ],
+        },
+        {
+
+            image: sheep_img,
+            text: "What animal is shown above?",
+            options: [
+                { id: 0, text: "Owca", isCorrect: true },
+                { id: 1, text: "Kogut", isCorrect: false },
+                { id: 2, text: "Świnia", isCorrect: false },
+                { id: 3, text: "Pies", isCorrect: false },
+            ],
+        },
     ]
     // Click answer and set score
     const optionClicked = (isCorrect) => {
