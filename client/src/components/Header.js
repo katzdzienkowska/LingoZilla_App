@@ -5,6 +5,7 @@ import cutezilla from "../images/cutezilla.png";
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  background: #fcda7c;
 `;
 
 const Heading = styled.h1`
