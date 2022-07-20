@@ -21,7 +21,7 @@ The BBC are looking to improve their online offering of educational content by d
 - Usage of text-to-speach API: Web Speech API
 - Dynamic features across the app
 
-## To Run App follow the steps below:
+# To Run App follow the steps below:
 
 - Clone the repository
 
