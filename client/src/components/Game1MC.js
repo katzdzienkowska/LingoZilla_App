@@ -73,15 +73,16 @@ const GameOne = () => {
     const [score, setScore] = useState(0);
     const [openCards, setOpenCards] = useState([]);
 
+    // render after shuffling
     useEffect(() => {
         const gameReady = () => {
-            const shuffledArray = shuffleArray(cards)
+            const shuffledArray = shuffleCards(cards)
             setCardsList(shuffledArray)
         };
         gameReady()
     }, []);
-
-    const shuffleArray = (array) => {
+    
+    const shuffleCards = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
