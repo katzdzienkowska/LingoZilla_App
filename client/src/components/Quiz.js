@@ -168,6 +168,8 @@ const Quiz = () => {
             ) : (
                 <div className='question-card'>
                     <h1>LingoZilla Quiz</h1>
+                    <p>The final challenge! Test your Polish by taking this quiz.</p>
+                    <p>Good luck! 🤞</p>
                     <h3>
                         Question: {currentQuestion + 1} out of {questions.length}
                     </h3>

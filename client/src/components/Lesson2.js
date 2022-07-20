@@ -23,7 +23,7 @@ const Lesson2 = ({textToSpeech}) => {
         <>
             <div>
                 <h1>Lesson 2:</h1>
-                <h2>Next challenge is to learn farm animals colours in Polish</h2>
+                <h2>Next challenge is to learn colours in Polish</h2>
                     <p>Hover over the animal image to learn its colour in Polish.</p>
                     <p>Hint! If you click on the Polish word, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</p>
                 {animalsList2}

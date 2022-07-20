@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { lessonThree } from '../data/data';
 import Lesson3Item from './Lesson3Item'
-import Game3 from './Game3D&D'
-import FeedBackForm from './FeedBackForm';
+import Game3 from './Game3'
 
 const Lesson3 = ({textToSpeech}) => {
 
@@ -33,7 +32,9 @@ const Lesson3 = ({textToSpeech}) => {
             {isShown && (
             <div>
                 < Game3 />
+                <button>
                 <Link to='/quiz'>Time for a Quiz!</Link>
+                </button>
             </div>
             )}
         </>

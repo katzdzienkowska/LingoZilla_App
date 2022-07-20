@@ -8,7 +8,6 @@ import LingoZillaContainer from "./container/LingoZillaContainer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import AppAbout from './components/AppAbout'
 
 import FeedBackForm from "./components/FeedBackForm";
 import FeedBackPage from "./components/FeedBackPage";
@@ -19,6 +18,8 @@ import Lesson2 from "./components/Lesson2";
 import Lesson3 from "./components/Lesson3";
 import Quiz from "./components/Quiz";
 import BackToTopButton from "./components/BackToTopButton";
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div>
+      <DndProvider backend={HTML5Backend}>
       <Router>
       <Header />
       <NavBar />
@@ -61,6 +63,7 @@ function App() {
       <FeedBackForm addFeedback={addFeedback} />
       <Footer />
       </Router>
+      </DndProvider>
     </div>
   );
 };
