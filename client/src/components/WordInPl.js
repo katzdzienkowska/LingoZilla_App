@@ -14,7 +14,6 @@ const WordInPl = ({word}) => {
 
   }))
 
-
     return (
        <div
        ref={drag}>
