@@ -1,10 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { lessonTwo } from "../data/data";
+import Timerv2 from "./Timerv2";
+import styled from "styled-components";
+import "./Game2.css";
+
+const Game2Container = styled.div`
+  background: dodgerblue;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+`;
+
+const Heading = styled.h1`
+  font-size: 5rem;
+`;
+
+const Button = styled.button`
+  & {
+    padding: 20px;
+    width: 30%;
+    font-size: 20px;
+    background: #9d7bf4;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    background: #fe729b;
+  }
+`;
 
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const [wobble, setWobble] = useState(0);
 
   const randomizeImages = () => {
     const data = [...lessonTwo];
@@ -23,43 +59,59 @@ const Game2 = () => {
     randomizeImages();
   }, []);
 
-  const handleButtonClick = (word) => {
+  const handleButtonClick = (word, picture) => {
     if (word === wordPrompt) {
       setTotalScore(totalScore + 1);
       randomizeImages();
     } else {
-      setTotalScore(totalScore - 1);
+      picture(setWobble(1));
     }
   };
 
   const animalsImages = imageSelections.map((animal) => {
     return (
       <img
+        className="game-img"
         src={animal.image}
         key={animal.id}
         alt={animal.animal}
-        width="200"
+        width="500"
         onClick={() => {
-          handleButtonClick(animal.pl);
+          handleButtonClick(animal.pl, animal.img);
         }}
+        onAnimationEnd={() => setWobble(0)}
+        wobble={wobble}
       />
     );
   });
 
-  const prompts = imageSelections.map((animal) => {
-    return <span>{animal.pl}</span>;
-  });
-
-  const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
-
   return (
-    <div className="Game2">
-      <h2>Game 2: Choose the Right One!</h2>
-      <p>Insert Game Description Here</p>
-      <p>Current Total Score: {totalScore}</p>
-      <p>Click the picture that is {wordPrompt}!</p>
-      {animalsImages}
-    </div>
+  
+    <Game2Container>
+      <Heading>Game 2: Match Race</Heading>
+      <h2>
+        <p>
+          Click the picture that matches the word! You get +1 point for every
+          correct answer.{" "}
+        </p>
+        <p>See how many points you can get in 30 seconds!</p>
+        <p>Click "Show Game" to open the game then "Start Timer" to begin!</p>
+        <p>Good luck! 🤞</p>
+      </h2>
+      <Button onClick={() => setVisible(!visible)}>
+        {visible ? "Hide Game" : "Show Game"}
+      </Button>
+      <div style={{ display: visible ? "block" : "none" }}>
+        <div className="show-game">
+          <Timerv2 initialMinutes={0} initialSeconds={2} />
+          <h2>Total Score: {totalScore}</h2>
+          <p>
+            Click the picture that is <strong>{wordPrompt}</strong>!
+          </p>
+          <p>{animalsImages}</p>
+        </div>
+      </div>
+    </Game2Container>
   );
 };
 

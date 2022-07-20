@@ -1,34 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import { lessonThree } from '../data/data';
 import Lesson3Item from './Lesson3Item'
-import Game3 from './Game3';
-import {DndProvider} from 'react-dnd'
-import {HTML5Backend} from 'react-dnd-html5-backend'
+import Game3 from './Game3D&D'
+import FeedBackForm from './FeedBackForm';
 
-const Lesson3 = () => {
+const Lesson3 = ({textToSpeech}) => {
 
     const animalsList3 = lessonThree.map((animal, index) => {
         return (
-            <Lesson3Item animal={animal} key={animal.id} index={index} />
+            <Lesson3Item animal={animal} key={animal.id} index={index} textToSpeech={textToSpeech}/>
         );
     });
 
-    return (
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = event => {
+        setIsShown(true);
+    };
+
+    return(
         <>
-            <h1>Lesson Three: Farm Animals and Colours</h1>
-            <p>short desc of the lesson to be added</p>
-            {animalsList3}
+            <div>
+                <h1>Lesson 3:</h1>
+                <h2>Let's revise previous lessons and throw in some basic Polish grammar.</h2>
+                    <p>Have a look at the images and their descriptions. First pair of sentences describes what is the animal, in English and then in Polish. The second pair tells you the colour of the animal. </p>
+                    <p>Hint! If you click on the Polish sentence, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</p>
+                {animalsList3}
+                <button onClick={handleClick}>Game time!</button>
+            </div>
 
-            <h2> Game Three </h2>
-
-            <DndProvider backend={HTML5Backend}>
-
-            <Game3 />
-
-            </DndProvider>
+            {isShown && (
+            <div>
+                < Game3 />
+                <Link to='/quiz'>Time for a Quiz!</Link>
+            </div>
+            )}
         </>
     );
 };
-
 
 export default Lesson3; 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {lessonOne} from '../data/data';
 import Lesson1Item from './Lesson1Item';
 import GameOne from './Game1MC'
@@ -11,12 +12,32 @@ const Lesson1 = ({textToSpeech}) => {
         );
     });
 
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = event => {
+        setIsShown(true);
+    };
+
     return(
         <>
-            <h1>Lesson One: Farm Animals</h1>
-            <p>short desc of the lesson to be added</p>
-            {animalsList}
-            < GameOne /> 
+            <div>
+                <h1>Lesson 1:</h1>
+                <h2>Let's start with learning farm animals names in Polish</h2>
+                    <p>Hover over the animal image to learn its name in Polish.</p>
+                    <p>Hint! If you click on the Polish word, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</p>
+                {animalsList}
+                <button onClick={handleClick}>Game time!</button>
+            </div>
+
+            {isShown && (
+            <div>
+                < GameOne />
+                <button >
+                <Link to='/lesson2'>Go to level 2</Link>
+                </button>
+            </div>
+            )}
+
         </>
     );
 };
