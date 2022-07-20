@@ -12,7 +12,6 @@ import "../data/data";
 const Board = () => {
 
   const[totalScore, setTotalScore] = useState(0);
-//   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
   const [wordBoard , setWordBoard] = useState([])
   const [colourBoard , setColourBoard] = useState([])
@@ -25,9 +24,6 @@ const Board = () => {
     collect : (monitor) => ({
         isOver : !!monitor.isOver(), 
     })
-
-
-
   }))
 
 
@@ -38,40 +34,21 @@ const Board = () => {
     collect : (monitor) => ({
         isOver : !!monitor.isOver(), 
     })
-
-
-
   }))
-
-
-
 
   const addWordToBoard = (id) => {
 
-      console.log(id)
-
-
-
     const updatedlessonOne = lessonOne.find((word) => id === word.id); 
     setWordBoard((wordBoard) => [...wordBoard, updatedlessonOne])
-
-    // if (updatedlessonOne !== undefined) {
-    //     setWordBoard((wordBoard) => [...wordBoard, updatedlessonOne])
-    // } 
   }; 
 
 
   const addColourToBoard = (id) => {
 
-    console.log(id)
-
     const updatedlessonTwo = lessonTwo.find((colour) => id === colour.id); 
     setColourBoard([...colourBoard, updatedlessonTwo]) 
 
   }
-
-
-
 
   const randomizeImages = () => {
     const data = [...lessonThree];
@@ -79,23 +56,11 @@ const Board = () => {
     randomData.push(data.splice(Math.floor(Math.random() * data.length), 1));
     const animalObjects = randomData.flat();
     setImageSelections(animalObjects);
-    // const animal =
-    //   animalObjects[Math.floor(Math.random() * animalObjects.length)];
-    // setWordPrompt(animal.pl);
   };
 
   useEffect(() => {
     randomizeImages();
   }, []);
-
-//   const handleButtonClick = (word) => {
-//     if (word === wordPrompt) {
-//       setTotalScore(totalScore + 1);
-//       randomizeImages();
-//     } else {
-//       setTotalScore(totalScore - 1);
-//     }
-//   };
 
   const animalsImages = imageSelections.map((animal) => {
     return (
@@ -106,60 +71,27 @@ const Board = () => {
         animalWordPoland = {animal.wordpl}
         animalColourPoland = {animal.colourpl}
         width="200"
-        // onClick={() => {
-        //   handleButtonClick(animal.pl);
-        // }}
       />
     );
   });
 
-//   const prompts = imageSelections.map((animal) => {
-//     return <span>{animal.pl}</span>;
-//   });
-
-//   const randomPrompts = prompts[Math.floor(Math.random() * prompts.length)];
-
   const handleOnClick = () => { 
 
-    console.log(imageSelections[6])
-    console.log(wordBoard[0].pl)
-    console.log(imageSelections[7])
-    console.log(colourBoard[0].pl)
-
-     if (imageSelections[0].wordpl === wordBoard[0].pl && imageSelections[0].colourpl === colourBoard[0].pl) {
+    if (imageSelections[0].wordpl === wordBoard[0].pl && imageSelections[0].colourpl === colourBoard[0].pl) {
         setTotalScore(totalScore + 1);
         randomizeImages();
       } else {
         setTotalScore(totalScore - 1);
       }
-
       setColourBoard([])
       setWordBoard([])
   }
-
-// const handleOnClick = () => { 
-
-//     if ( 4 < 3) {
-//        setTotalScore(totalScore + 1);
-//        randomizeImages();
-//      } else {
-//        setTotalScore(totalScore - 1);
-//      }
-//  }
-
-
-
-
-
-
 
     return (
         <div className="Board">
 
             <div className="animal">
               {animalsImages}
-
-            
             </div>
 
             <div>
@@ -179,7 +111,7 @@ const Board = () => {
 
             <button onClick= {handleOnClick} >Submit</button>  
 
-            <p>    Current Total Score:  {totalScore}  </p>
+            <p>Current Total Score: {totalScore}</p>
 
          </div> 
     )
