@@ -1,7 +1,17 @@
 import React from 'react';
 import './lesson1.css';
+import styled from 'styled-components'
 
-const Lesson2Item = ({ animal, textToSpeech }) => {
+const Text = styled.p`
+    font-size: 1.5rem;
+    padding: 5px;
+    
+`
+const Container = styled.div`
+    margin-top: 15px
+`
+
+const Lesson3Item = ({ animal, textToSpeech }) => {
 
     const handleSpeech1 = () => {
         const word = animal.pl1;
@@ -15,19 +25,19 @@ const Lesson2Item = ({ animal, textToSpeech }) => {
 
     return (
         <div>
-            <div>
-                <img src={animal.image} alt={animal.en} />
+            <div className='animal-card3'>
+                <img className='animal-card3' src={animal.image} alt={animal.en} />
             </div>
-            <div>
-                <p>{animal.en1}</p>
-                <p onClick={handleSpeech1}>{animal.pl1}</p>
+            <Container className='animal-name-en'>
+                <Text> 🇬🇧: {animal.en1}</Text>
+                <Text onClick={handleSpeech1}> 🇵🇱: {animal.pl1} 🔊</Text>
                 <br></br>
-                <p>{animal.en2}</p>
-                <p onClick={handleSpeech2}>{animal.pl2}</p>
-            </div>
+                <Text> 🇬🇧: {animal.en2}</Text>
+                <Text onClick={handleSpeech2}> 🇵🇱: {animal.pl2} 🔊</Text>
+            </Container>
         </div>
     );
 };
 
 
-export default Lesson2Item; 
+export default Lesson3Item; 

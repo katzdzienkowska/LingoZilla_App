@@ -6,8 +6,6 @@
 
 .container {
   width: 100%;
-  background: pink;
-
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -30,16 +28,19 @@
   from {
     max-width: 0;
   }
+
   to {
     max-width: 100%;
   }
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
     border-color: white;
   }
@@ -49,9 +50,11 @@
   from {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
+
   to {
     opacity: 1;
   }
