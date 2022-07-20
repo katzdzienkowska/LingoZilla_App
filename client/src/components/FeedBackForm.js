@@ -142,8 +142,8 @@ const FeedBackForm = ({ addFeedback }) => {
               value="under5"
               selected={formData.ageGroup === "" ? "selected" : ""}
             >
-              Under 5 years old
             </option>
+            <option value="0-5">Under 5 years old</option>
             <option value="5-14">5 - 14 years old</option>
             <option value="15-24">15 - 24 years old</option>
             <option value="25-54">25 - 54 years old</option>
