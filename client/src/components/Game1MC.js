@@ -107,7 +107,7 @@ const GameOne = () => {
             if (cardPicked?.length === 1) {
                 // are cards the same check
                 if (cardPicked[0].id === card.id) {
-                    setScore(score => score + 2)
+                    setScore(score => score + 1)
                     setOpenCards(openCards => openCards?.concat([cardPicked[0], card]))
                 }
                 setTimeout(() => {
@@ -133,11 +133,11 @@ const GameOne = () => {
     return (
         <div>
             <div className='memory-game-container'>
-                <h1>Memory Game</h1>
+                <h1>Game1: Memory Game</h1>
                 <h2>Ready to test your memory skills?</h2>
                 <p>In this fun memory game, match the images of cute farm animals with their Polish names.</p>
-                <p>Turn over the cards by clicking on them to find out the pairs. Once matched, the cards will stay open and two points will be added to your final score.</p>
-                <p>To reset, just hit the 'Play again?' button below the score.</p>
+                <p>Turn over the cards by clicking on them to find out the pairs. Once matched, the cards will stay open and one point will be added to your final score.</p>
+                <p>Good luck! 🤞</p>
                 <div className="memory-game-cards">
                     {cardsList?.map((card, index) => {
                         return (
