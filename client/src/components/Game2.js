@@ -59,12 +59,13 @@ const Game2 = () => {
     randomizeImages();
   }, []);
 
-  const handleButtonClick = (word, picture) => {
+  const handleButtonClick = (word, event) => {
     if (word === wordPrompt) {
       setTotalScore(totalScore + 1);
       randomizeImages();
     } else {
-      picture(setWobble(1));
+      console.log(event.target);
+      event.target(setWobble(1));
     }
   };
 
@@ -76,8 +77,8 @@ const Game2 = () => {
         key={animal.id}
         alt={animal.animal}
         width="500"
-        onClick={() => {
-          handleButtonClick(animal.pl, animal.img);
+        onClick={(event) => {
+          handleButtonClick(animal.pl, event);
         }}
         onAnimationEnd={() => setWobble(0)}
         wobble={wobble}
@@ -86,7 +87,6 @@ const Game2 = () => {
   });
 
   return (
-  
     <Game2Container>
       <Heading>Game 2: Match Race</Heading>
       <h2>

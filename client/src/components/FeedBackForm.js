@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import FeedbackStarRating from "./FeedbackStarRating";
 import { postFeedback } from "./LingozillaService";
 
 const Form = styled.form`
@@ -140,7 +141,7 @@ const FeedBackForm = ({ addFeedback }) => {
           </Select>
         </div>
         <div className="wrapper">
-          <Label htmlFor ="rating">Rating</Label>
+          <Label htmlFor="rating">Rating</Label>
           <input
             onChange={onChange}
             type="radio"
@@ -158,7 +159,7 @@ const FeedBackForm = ({ addFeedback }) => {
             value="2-stars"
             checked={formData.rating === "2-stars"}
           />
-          <label htmlFor ="2-stars">2 Stars</label>
+          <label htmlFor="2-stars">2 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -167,7 +168,7 @@ const FeedBackForm = ({ addFeedback }) => {
             value="3-stars"
             checked={formData.rating === "3-stars"}
           />
-          <label htmlFor ="3-stars">3 Stars</label>
+          <label htmlFor="3-stars">3 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -211,6 +212,7 @@ const FeedBackForm = ({ addFeedback }) => {
         </div>
         <SubmitButton type="submit" value="Submit" id="submit" />
       </Form>
+      <FeedbackStarRating />
     </div>
   );
 };
