@@ -5,10 +5,8 @@ import styled from "styled-components";
 import "./Game2.css";
 
 const Game2Container = styled.div`
-  
   align-items: center;
   text-align: center;
-  
 `;
 
 const Heading = styled.h1`
@@ -35,7 +33,22 @@ const Button = styled.button`
   }
 `;
 
+const Score = styled.span`
+  font-size: 50px;
+  color: #f66334;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 50px;
+`;
 
+const Text = styled.p`
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+`;
+const TextPrompt = styled.p`
+  font-size: 2rem;
+  margin-bottom: 10px;
+`;
 
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
@@ -90,26 +103,26 @@ const Game2 = () => {
 
   return (
     <Game2Container>
-      <Heading>Game 2: Match Race</Heading>
-      <h2>
-        <p>
-          Click the picture that matches the word! You get +1 point for every
-          correct answer.{" "}
-        </p>
-        <p>See how many points you can get in 30 seconds!</p>
-        <p>Click "Show Game" to open the game then "Start Timer" to begin!</p>
-        <p>Good luck! 🤞</p>
-      </h2>
+      <Heading>Match Race</Heading>
+      <Text>
+        Click the picture that matches the word! You get +1 point for every
+        correct answer.{" "}
+      </Text>
+      <Text>See how many points you can get in 30 seconds!</Text>
+      <Text>
+        Click "Show Game" to open the game then "Start Timer" to begin!
+      </Text>
+      <Text>Good luck! 🤞</Text>
       <Button onClick={() => setVisible(!visible)}>
         {visible ? "Hide Game" : "Show Game"}
       </Button>
       <div style={{ display: visible ? "block" : "none" }}>
         <div className="show-game">
           <Timerv2 initialMinutes={0} initialSeconds={30} />
-          <h3>Total Score: {totalScore}</h3>
-          <p>
+          <Score>Total Score: {totalScore}</Score>
+          <TextPrompt>
             Click the picture that is coloured <strong>{wordPrompt}</strong>!
-          </p>
+          </TextPrompt>
           <p>{animalsImages}</p>
         </div>
       </div>

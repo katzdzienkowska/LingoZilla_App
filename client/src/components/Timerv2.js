@@ -101,7 +101,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
             <h1 className="flash-red">Game Over!</h1>
             <br />
             <button className="btn-timer" onClick={restartTimer}>
-              RESTART TIMER
+              Play Again
             </button>
           </>
         ) : (
@@ -113,7 +113,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
       {isShown && (
         <>
           <button className="btn-timer" onClick={startTimer}>
-            START TIMER
+            Start Timer
           </button>
         </>
       )}

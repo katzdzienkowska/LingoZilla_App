@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { lessonTwo } from '../data/data';
-import Lesson2Item from './Lesson2Item'
-import Game2 from './Game2'
-import FeedBackForm from './FeedBackForm';
-import styled from 'styled-components'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { lessonTwo } from "../data/data";
+import Lesson2Item from "./Lesson2Item";
+import Game2 from "./Game2";
+import FeedBackForm from "./FeedBackForm";
+import styled from "styled-components";
 
 const Heading = styled.h1`
   margin: 40px;
@@ -14,7 +14,6 @@ const Heading = styled.h1`
   padding: 2px;
   border: 2px solid white;
   border-radius: 40px;
-  
 `;
 
 const StyledLink = styled(Link)`
@@ -23,7 +22,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Button = styled.button`
-      & {
+  & {
     padding: 20px;
     width: 30%;
     font-size: 20px;
@@ -36,7 +35,7 @@ const Button = styled.button`
     cursor: pointer;
     margin: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
-        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   }
   &:hover {
     opacity: 0.9;
@@ -46,26 +45,26 @@ const Button = styled.button`
 `;
 
 const Button2 = styled.button`
-& {
-  padding: 20px;
-  width: 30%;
-  font-size: 20px;
-  background: #9d7bf4;
-  color: white;
-  border: 0;
-  outline: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 40px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
-        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-}
-&:hover {
-  opacity: 0.9;
-  cursor: pointer;
-  background: #fe729b;
-}
+  & {
+    padding: 20px;
+    width: 30%;
+    font-size: 20px;
+    background: #9d7bf4;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    background: #fe729b;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -76,7 +75,6 @@ const Container = styled.div`
   display: grid;
   align-items: center;
   justify-content: space-evenly;
-  
 `;
 
 const ImgContainer = styled.div`
@@ -85,33 +83,38 @@ const ImgContainer = styled.div`
   display: grid;
   gap: 5rem;
   padding: 2rem;
-  
 `;
 
-
-
 const Lesson2 = ({ textToSpeech }) => {
-
   const animalsList2 = lessonTwo.map((animal, index) => {
     return (
-      <Lesson2Item animal={animal} key={animal.id} index={index} textToSpeech={textToSpeech} />
+      <Lesson2Item
+        animal={animal}
+        key={animal.id}
+        index={index}
+        textToSpeech={textToSpeech}
+      />
     );
   });
 
   const [isShown, setIsShown] = useState(false);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setIsShown(true);
   };
 
   return (
     <>
       <div>
-
         <Heading>Lesson 2</Heading>
         <h2>Next challenge is to learn colours in Polish</h2>
-        <Paragraph>Hover over the animal image to learn its colour in Polish.</Paragraph>
-        <Paragraph>Hint! If you click on the Polish word, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!</Paragraph>
+        <Paragraph>
+          Hover over the animal image to learn its colour in Polish.
+        </Paragraph>
+        <Paragraph>
+          Hint! If you click on the Polish word, Zuzia will teach you how to
+          pronunce it correctly. Remember to turn on your volume!
+        </Paragraph>
         <Container>
           <ImgContainer>{animalsList2}</ImgContainer>
         </Container>
@@ -120,15 +123,14 @@ const Lesson2 = ({ textToSpeech }) => {
 
       {isShown && (
         <div>
-          < Game2 />
-          <Button2 >
-            <StyledLink to='/lesson3'>Level 3 >> </StyledLink>
+          <Game2 />
+          <Button2>
+            <StyledLink to="/lesson3">Level 3 &gt;&gt; </StyledLink>
           </Button2>
         </div>
       )}
-
     </>
   );
 };
 
-export default Lesson2; 
+export default Lesson2;

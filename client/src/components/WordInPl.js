@@ -1,30 +1,25 @@
-import React from "react"; 
-import {useDrag } from "react-dnd";
+import React from "react";
+import { useDrag } from "react-dnd";
+import styled from "styled-components";
 
+const Text = styled.p`
+  font-size: 1.5rem;
+`;
 
+const WordInPl = ({ word }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "word",
+    item: { id: word.id },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
 
-const WordInPl = ({word}) => {
+  return (
+    <div ref={drag}>
+      <Text>{word.pl} </Text>
+    </div>
+  );
+};
 
-   const [{isDragging}, drag] = useDrag(() => ({
-      type : "word",
-      item: {id : word.id},
-      collect : (monitor) => ({
-          isDragging : !! monitor.isDragging(),
-      })
-
-  }))
-
-    return (
-       <div
-       ref={drag}>
-          {word.pl} 
-       </div>
-    )
-} 
-
-
-
-
-
-
-export default WordInPl; 
+export default WordInPl;
