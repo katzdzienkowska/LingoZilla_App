@@ -44,45 +44,24 @@ function App() {
 
   return (
     <div>
-      <Header />
       <Router>
-        <NavBar />
-        <LingoZillaContainer />
+      <Header />
+      <NavBar />
 
         <Routes>
-
           <Route path="/" element={<LingoZillaContainer />} />
-
-
-          <Route path="about" element={<AppAbout />} />
-
-          <Route path="feedback" element={<FeedBackPage />} />
-
-          <Route path="lesson1" element={<Lesson1 textToSpeech={textToSpeech} />} />
-
-          <Route path="lesson2" element={<Lesson2 textToSpeech={textToSpeech} />} />
-
-          <Route path="lesson3" element={<Lesson3 textToSpeech={textToSpeech} />} />
-
-          <Route path="quiz" element={<Quiz />} />
-
+          <Route path="/testimonies" element={<FeedBackPage feedbacks={feedbacks}/>} />
+          <Route path="/lesson1" element={<Lesson1 textToSpeech={textToSpeech} />} />
+          <Route path="/lesson2" element={<Lesson2 textToSpeech={textToSpeech} />} />
+          <Route path="/lesson3" element={<Lesson3 textToSpeech={textToSpeech} />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
 
-
-
-      </Router>
-      <FeedBackForm addFeedback={addFeedback} />
-      <FeedBackPage feedbacks={feedbacks} />
       <BackToTopButton />
+      <FeedBackForm addFeedback={addFeedback} />
       <Footer />
-
-
-
-
+      </Router>
     </div>
-
-
-
   );
 };
 

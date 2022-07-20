@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {lessonOne} from '../data/data';
 import Lesson1Item from './Lesson1Item';
 import GameOne from './Game1MC'
-import FeedBackForm from './FeedBackForm';
 
 const Lesson1 = ({textToSpeech}) => { 
 
@@ -33,18 +32,12 @@ const Lesson1 = ({textToSpeech}) => {
             {isShown && (
             <div>
                 < GameOne />
-                <button onClick={handleClick}>Did you like the lesson?</button>
-            </div>
-            )}
-
-            {isShown && (
-            <div>
-                <FeedBackForm/>
                 <button >
                 <Link to='/lesson2'>Go to level 2</Link>
                 </button>
             </div>
             )}
+
         </>
     );
 };
