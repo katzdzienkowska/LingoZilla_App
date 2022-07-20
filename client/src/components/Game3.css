@@ -28,6 +28,10 @@ img{
     margin: 3%;
     margin-left: 10%;
     text-align: center;
+    /* background-color: blue; */
+      border: 2px solid black;
+      padding: 4%;
+
     
 }
 
@@ -35,3 +39,12 @@ img{
     text-align: center;
 
 }
+
+.center{
+    text-align: center;
+}
+
+/* .btata {
+
+    margin: 50%;
+} */

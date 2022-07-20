@@ -18,11 +18,14 @@ const Game3 = () => {
 
     return (
         <>
+            <h2 className="center"> Animals in Polish </h2> 
+            
+        <div className="flex"> 
         
-        <div className="flex"> {lessonOne.map((word , index) => {
-            return <WordInPl word={word}  key={word.id} index={index} /> })} </div> 
+        {lessonOne.map((word , index) => {
+            return  <WordInPl  word={word}  key={word.id} index={index} /> })} </div> 
 
-
+            <h2 className="center"> Animals Colour in Polish </h2>   
         <div className="flex"> {lessonTwo.map((colour , index) => {
             return <ColourInPl colour={colour}  key={colour.id} index={index} /> })} </div> 
 

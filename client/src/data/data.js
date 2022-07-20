@@ -186,7 +186,7 @@ export const lessonThree = [
         en2: 'This pig is pink.',
         pl2: 'Ta świnia jest różowa.',
         wordpl: 'Świnia',
-        colourpl: 'Różowa', 
+        colourpl: 'Różowy', 
         image: pig_img
     },
 ];
