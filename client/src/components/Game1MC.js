@@ -123,7 +123,7 @@ const GameOne = () => {
     };
 
     const playAgain = () => {
-        shuffleArray(cards)
+        shuffleCards(cards)
         setCardPickedId([])
         setCardPicked([])
         setScore(0)
