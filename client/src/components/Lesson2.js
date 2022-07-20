@@ -33,18 +33,12 @@ const Lesson2 = ({textToSpeech}) => {
             {isShown && (
             <div>
                 < Game2 />
-                <button onClick={handleClick}>Did you like the lesson?</button>
-            </div>
-            )}
-
-            {isShown && (
-            <div>
-                <FeedBackForm/>
                 <button >
                 <Link to='/lesson3'>Go to level 3</Link>
                 </button>
             </div>
             )}
+
         </>
     );
 };
