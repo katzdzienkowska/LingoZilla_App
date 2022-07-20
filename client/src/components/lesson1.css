@@ -1,12 +1,16 @@
 /* testing the hover option on animal images */
 /* text-to-speach to be added - on hover + click on the Polish name */
 
+h2 {
+  font-size: 3rem;
+}
+
 .animal-card {
   position: relative;
   width: 400px;
   height: 400px;
   overflow: hidden;
-  text-align: center
+  text-align: center;
 }
 
 .animal-image {
@@ -28,6 +32,4 @@
   padding: 160px 0px;
   vertical-align: middle;
   height: 450px;
-  font-size: 30px;
-
 }
