@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { postFeedback } from "./LingozillaService";
+import { FaStar } from "react-icons/fa";
+import "./FeedbackStarRating.css";
 
 const Form = styled.form`
   text-align: center;
@@ -88,6 +90,9 @@ const FeedBackForm = ({ addFeedback }) => {
     date: "",
   });
 
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     postFeedback(formData).then((data) => {
@@ -107,6 +112,12 @@ const FeedBackForm = ({ addFeedback }) => {
     const newFormData = Object.assign({}, formData);
     console.log(event.target.value);
     newFormData[event.target.name] = event.target.value;
+    setFormData(newFormData);
+  };
+
+  const onRatingChange = (starRating) => {
+    const newFormData = Object.assign({}, formData);
+    newFormData.rating = starRating;
     setFormData(newFormData);
   };
 
@@ -131,8 +142,8 @@ const FeedBackForm = ({ addFeedback }) => {
               value="under5"
               selected={formData.ageGroup === "" ? "selected" : ""}
             >
-              Under 5 years old
             </option>
+            <option value="0-5">Under 5 years old</option>
             <option value="5-14">5 - 14 years old</option>
             <option value="15-24">15 - 24 years old</option>
             <option value="25-54">25 - 54 years old</option>
@@ -140,7 +151,33 @@ const FeedBackForm = ({ addFeedback }) => {
           </Select>
         </div>
         <div className="wrapper">
-          <Label htmlFor ="rating">Rating</Label>
+          {[...Array(5)].map((star, i) => {
+            const ratingValue = i + 1;
+
+            return (
+              <label>
+                <input
+                  type="radio"
+                  name="rating"
+                  value={ratingValue}
+                  onClick={() => {
+                    setRating(ratingValue);
+                    onRatingChange(ratingValue);
+                  }}
+                />
+                <FaStar
+                  className="star"
+                  color={
+                    ratingValue <= (hover || rating) ? "#FFC107" : "E4E5E9"
+                  }
+                  size={100}
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setRating(null)}
+                />
+              </label>
+            );
+          })}
+          {/* <Label htmlFor="rating">Rating</Label>
           <input
             onChange={onChange}
             type="radio"
@@ -158,7 +195,7 @@ const FeedBackForm = ({ addFeedback }) => {
             value="2-stars"
             checked={formData.rating === "2-stars"}
           />
-          <label htmlFor ="2-stars">2 Stars</label>
+          <label htmlFor="2-stars">2 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -167,7 +204,7 @@ const FeedBackForm = ({ addFeedback }) => {
             value="3-stars"
             checked={formData.rating === "3-stars"}
           />
-          <label htmlFor ="3-stars">3 Stars</label>
+          <label htmlFor="3-stars">3 Stars</label>
           <input
             onChange={onChange}
             type="radio"
@@ -185,7 +222,7 @@ const FeedBackForm = ({ addFeedback }) => {
             value="5-stars"
             checked={formData.rating === "5-stars"}
           />
-          <label htmlFor="5-stars">5 Stars</label>
+          <label htmlFor="5-stars">5 Stars</label> */}
         </div>
         <div className="wrapper">
           <Label htmlFor="feedback">Feedback</Label>

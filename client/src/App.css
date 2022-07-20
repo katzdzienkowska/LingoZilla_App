@@ -1,3 +1,14 @@
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #90f1ef,
+    #ffd6e0,
+    #ffef9f,
+    #c1fba4,
+    #7bf1a8
+  );
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +45,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+body {
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 20s infinite;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  align-items: center;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
   }
 }
