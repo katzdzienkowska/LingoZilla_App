@@ -61,10 +61,10 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
 
         if (time.s === 0) {
           if (time.m === 0) {
+            clearInterval(myInterval);
             alert(
               "Game Over! Don't forget to check your Total Score to see how you did. 🎉"
             );
-            clearInterval(myInterval);
           } else if (time.m > 0) {
             updatedTime.m--;
             updatedTime.s = 59;
