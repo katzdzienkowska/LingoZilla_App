@@ -10,6 +10,7 @@ const FeedbackStarRating = () => {
     <div className="FeedbackStarRating">
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
+
         return (
           <label>
             <input
