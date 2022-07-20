@@ -1,6 +1,6 @@
 # MERN Full-Stack App LingoZilla
 
-**Project:** LingoZilla - Educational language app for kids to learn Polish through fun games and quizes
+**Project:** LingoZilla - Educational language app for kids to learn Polish through fun games and quizzes
 
 **Group:** Moath Al-Zoubi, Jack Carmichael, Sandy Yu, and Kat Zdzienkowska
 
@@ -42,7 +42,7 @@ npm run seeds
 - Run server
 
 ```sh
-> npm run server:dev
+npm run server:dev
 ```
 
 - Go to the client directory and:
