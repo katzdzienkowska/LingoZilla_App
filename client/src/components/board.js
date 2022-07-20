@@ -121,7 +121,12 @@ const Board = () => {
 
   const handleOnClick = () => { 
 
-     if (animalsImages.animalWordPoland === wordBoard.pl && animalsImages.animalColourPoland === colourBoard.pl) {
+    console.log(imageSelections[6])
+    console.log(wordBoard[0].pl)
+    console.log(imageSelections[7])
+    console.log(colourBoard[0].pl)
+
+     if (imageSelections[0].wordpl === wordBoard[0].pl && imageSelections[0].colourpl === colourBoard[0].pl) {
         setTotalScore(totalScore + 1);
         randomizeImages();
       } else {
@@ -146,7 +151,7 @@ const Board = () => {
 
 
 
-console.log(wordBoard.pl)
+
 
     return (
         <div className="Board">
@@ -164,7 +169,7 @@ console.log(wordBoard.pl)
 
             <div>
             {colourBoard.map((colour , index) => {
-            return <ColourInPl colour={colour}  key={colour.id} index={index} /> })}
+            return <ColourInPl  colour={colour}  key={colour.id} index={index} /> })}
             </div>
 
             this is a <span ref={drop}>.................</span> 
@@ -172,7 +177,7 @@ console.log(wordBoard.pl)
 
                 <br></br>
 
-            <button onClick={handleOnClick}>Submit</button>  
+            <button onClick= {handleOnClick} >Submit</button>  
 
             <p>    Current Total Score:  {totalScore}  </p>
 
