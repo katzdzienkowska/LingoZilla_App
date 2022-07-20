@@ -1,33 +1,56 @@
-import React from 'react' 
-import {Link} from "react-router-dom" ; 
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-const NavBar = () => { 
+const Container = styled.div`
+  background: #fcda7c;
+`;
 
-    return (
+const NavLinks = styled.ul`
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+`;
 
-        <ul>
-            <li>
-                <Link to = "/" > Home </Link>
-            </li>
-            <ul className='box1'>
-                <Link to="/lesson1" > Lesson1 </Link>
-            </ul>
-            <ul className='box2'>
-                <Link to="/lesson2" > Lesson2 </Link>
-            </ul>
-            <ul className='box3'>
-                <Link to="/lesson3" > Lesson3 </Link>
-            </ul>
-            <ul className='quiz-box'>
-                <Link to="/quiz" > Quiz </Link>
-            </ul>
-            <li>
-            <Link to = "/testimonies" > Testimonies </Link>
-            </li>
-        </ul>
-    )
+const StyledLink = styled(Link)`
+  & {
+    color: Blue;
+    text-decoration: none;
+    margin: 1rem;
+    position: relative;
+    font-size: 2rem;
+    transition: all 150ms ease-in-out;
+  }
+  &:hover {
+    color: red;
+  }
+`;
 
-}
+const NavBar = () => {
+  return (
+    <Container>
+      <NavLinks>
+        <li>
+          <StyledLink to="/"> Home </StyledLink>
+        </li>
+        <NavLinks>
+          <StyledLink to="/lesson1"> Lesson 1 </StyledLink>
+        </NavLinks>
+        <NavLinks>
+          <StyledLink to="/lesson2"> Lesson 2 </StyledLink>
+        </NavLinks>
+        <NavLinks>
+          <StyledLink to="/lesson3"> Lesson 3 </StyledLink>
+        </NavLinks>
+        <NavLinks>
+          <StyledLink to="/quiz"> Quiz </StyledLink>
+        </NavLinks>
+        <li>
+          <StyledLink to="/testimonies"> Testimonies </StyledLink>
+        </li>
+      </NavLinks>
+    </Container>
+  );
+};
 
-
-export default NavBar; 
+export default NavBar;
