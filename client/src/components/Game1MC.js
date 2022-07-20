@@ -73,12 +73,11 @@ const GameOne = () => {
     const [score, setScore] = useState(0);
     const [openCards, setOpenCards] = useState([]);
 
-    const gameReady = () => {
-        const shuffledArray = shuffleArray(cards)
-        setCardsList(shuffledArray)
-    };
-
     useEffect(() => {
+        const gameReady = () => {
+            const shuffledArray = shuffleArray(cards)
+            setCardsList(shuffledArray)
+        };
         gameReady()
     }, []);
 
@@ -133,13 +132,16 @@ const GameOne = () => {
     return (
         <div>
             <div className='memory-game-container'>
-                <h2>Memory Game</h2>
-                <p>Game 1 Memory Game description placeholder</p>
+                <h1>Memory Game</h1>
+                <h2>Ready to test your memory skills?</h2>
+                <p>In this fun memory game, match the images of cute farm animals with their Polish names.</p>
+                <p>Turn over the cards by clicking on them to find out the pairs. Once matched, the cards will stay open and two points will be added to your final score.</p>
+                <p>To reset, just hit the 'Play again?' button below the score.</p>
                 <div className="memory-game-cards">
                     {cardsList?.map((card, index) => {
                         return (
                             <div className='cardImage' key={index} onClick={() => flipCard(card, index)}>
-                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover image'/>
+                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover'/>
                             </div>
                         )
                     })}

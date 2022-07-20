@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useSpeechSynthesis } from "react-speech-kit";
 import { getFeedback } from "./service/LingozillaService";
 import "./App.css";
@@ -13,9 +13,12 @@ import AppAbout from './components/AppAbout'
 import FeedBackForm from "./components/FeedBackForm";
 import FeedBackPage from "./components/FeedBackPage";
 
+
 import Lesson1 from "./components/Lesson1";
 import Lesson2 from "./components/Lesson2";
 import Lesson3 from "./components/Lesson3";
+import Quiz from "./components/Quiz";
+import BackToTopButton from "./components/BackToTopButton";
 
 
 function App() {
@@ -23,9 +26,9 @@ function App() {
   const { speak, voices } = useSpeechSynthesis();
 
   const textToSpeech = (word) => {
-    speak({ 
-      text: word, 
-      voice: voices[46] 
+    speak({
+      text: word,
+      voice: voices[46]
     }); // voice index number 46 is Polish lang
   };
 
@@ -42,32 +45,44 @@ function App() {
   return (
     <div>
       <Header />
-      
-      <Router> 
-       <NavBar  />
-       <LingoZillaContainer />
+      <Router>
+        <NavBar />
+        <LingoZillaContainer />
 
-      <Routes>
+        <Routes>
 
-        {/* <Route path = "/" element = {<LingoZillaContainer/>}/> */}
+          <Route path="/" element={<LingoZillaContainer />} />
 
-        <Route path = "about" element= {<AppAbout/>}/> 
 
-        <Route path = "feedback" element = {<FeedBackPage/>} />
+          <Route path="about" element={<AppAbout />} />
 
-        <Route path = "lesson1" element = {<Lesson1 textToSpeech={textToSpeech}/>} />
+          <Route path="feedback" element={<FeedBackPage />} />
 
-        <Route path = "lesson2" element = {<Lesson2 textToSpeech={textToSpeech}/>} />
+          <Route path="lesson1" element={<Lesson1 textToSpeech={textToSpeech} />} />
 
-        <Route path = "lesson3" element = {<Lesson3 textToSpeech={textToSpeech}/>} />
+          <Route path="lesson2" element={<Lesson2 textToSpeech={textToSpeech} />} />
 
-      </Routes>
-    </Router>
+          <Route path="lesson3" element={<Lesson3 textToSpeech={textToSpeech} />} />
+
+          <Route path="quiz" element={<Quiz />} />
+
+        </Routes>
+
+
+
+      </Router>
       <FeedBackForm addFeedback={addFeedback} />
       <FeedBackPage feedbacks={feedbacks} />
-    <Footer />
-    
+      <BackToTopButton />
+      <Footer />
+
+
+
+
     </div>
+
+
+
   );
 };
 

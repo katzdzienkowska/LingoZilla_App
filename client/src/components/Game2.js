@@ -86,6 +86,7 @@ const Game2 = () => {
   });
 
   return (
+  
     <Game2Container>
       <Heading>Game 2: Match Race</Heading>
       <h2>
