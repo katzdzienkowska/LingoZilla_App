@@ -13,6 +13,38 @@ import pig_pl from '../images/pig_pl.png'
 import dog_pl from '../images/dog_pl.png'
 import cover from '../images/farm.png'
 import './game1mc.css';
+import styled from 'styled-components'
+
+const Button = styled.button`
+& {
+    padding: 20px;
+    width: 30%;
+    font-size: 20px;
+    background: #fe729b;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    background: #9d7bf4;
+  }
+`;
+
+const Score = styled.span`
+    font-size: 50px;
+    color: #F66334;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 50px;
+`
 
 const cards = [
     {
@@ -81,7 +113,7 @@ const GameOne = () => {
         };
         gameReady()
     }, []);
-    
+
     const shuffleCards = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -138,16 +170,21 @@ const GameOne = () => {
                 <p>In this fun memory game, match the images of cute farm animals with their Polish names.</p>
                 <p>Turn over the cards by clicking on them to find out the pairs. Once matched, the cards will stay open and one point will be added to your final score.</p>
                 <p>Good luck! 🤞</p>
+                <Score>Total Score: {score}</Score>
+
                 <div className="memory-game-cards">
                     {cardsList?.map((card, index) => {
                         return (
                             <div className='cardImage' key={index} onClick={() => flipCard(card, index)}>
-                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover'/>
+                                <img className="image" src={onCardSelect(card, index) ? card.img : cardCover} alt='cover' />
                             </div>
                         )
                     })}
                 </div>
-                <h3>Score: {score}</h3><button onClick={playAgain}>Play again?</button>
+
+                <p>
+                    <Button onClick={playAgain}>Play again?</Button>
+                </p>
             </div>
         </div>
     );

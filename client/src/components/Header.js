@@ -9,17 +9,18 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-size: 10rem;
+  font-size: 7rem;
   margin-top: 50px;
+  color: #2274A5
 `;
 
 const Header = () => {
-  return (
-    <Container>
-      <img src={cutezilla} alt="LingoZilla logo" width={300} />
-      <Heading>LingoZilla</Heading>
-    </Container>
-  );
+    return (
+        <Container>
+            <img src={cutezilla} alt="LingoZilla logo" width={250} />
+            <Heading>LingoZilla</Heading>
+        </Container>
+    );
 };
 
 export default Header;

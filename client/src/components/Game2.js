@@ -5,10 +5,10 @@ import styled from "styled-components";
 import "./Game2.css";
 
 const Game2Container = styled.div`
-  background: dodgerblue;
+  
   align-items: center;
   text-align: center;
-  height: 100vh;
+  
 `;
 
 const Heading = styled.h1`
@@ -34,6 +34,8 @@ const Button = styled.button`
     background: #fe729b;
   }
 `;
+
+
 
 const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
@@ -103,10 +105,10 @@ const Game2 = () => {
       </Button>
       <div style={{ display: visible ? "block" : "none" }}>
         <div className="show-game">
-          <Timerv2 initialMinutes={0} initialSeconds={2} />
-          <h2>Total Score: {totalScore}</h2>
+          <Timerv2 initialMinutes={0} initialSeconds={30} />
+          <h3>Total Score: {totalScore}</h3>
           <p>
-            Click the picture that is <strong>{wordPrompt}</strong>!
+            Click the picture that is coloured <strong>{wordPrompt}</strong>!
           </p>
           <p>{animalsImages}</p>
         </div>
