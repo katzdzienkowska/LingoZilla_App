@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FaStar } from "react-icons/fa";
 
 const IndividualFeedback = styled.li`
   border: 2px solid black;
@@ -13,12 +14,19 @@ const Text = styled.p`
 `;
 
 const Feedback = ({ feedback }) => {
+  const numberToDisplay = feedback.rating;
+
   return (
     <div className="Feedback">
       <IndividualFeedback>
         <h2>Student: {feedback.name}</h2>
         <Text>Age Group: {feedback.ageGroup}</Text>
-        <Text>Rating: {feedback.rating}-stars </Text>
+        <Text>
+          Rating:{" "}
+          {[...Array(numberToDisplay)].map((star) => {
+            return <FaStar color="#FFC107" />;
+          })}
+        </Text>
         <Text>Feedback: {feedback.feedback}</Text>
         <Text>Date: {feedback.date}</Text>
       </IndividualFeedback>
