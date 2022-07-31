@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import "./FeedbackStarRating.css";
+import "./feedback-star-rating.css";
 
 const FeedbackStarRating = () => {
   const [rating, setRating] = useState(null);

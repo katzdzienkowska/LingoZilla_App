@@ -5,7 +5,7 @@ import { FaHorse } from "react-icons/fa";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { GiFarmTractor } from "react-icons/gi";
 import styled from "styled-components";
-import "./Lingo.css";
+import "./lingo.css";
 
 const Heading = styled.h1`
   margin: 40px;

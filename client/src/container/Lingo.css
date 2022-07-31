@@ -20,8 +20,7 @@
 }
 
 .box1:hover {
-  background: #3bf4fb;
-  opacity: 70%;
+  background: #1eebf3;
 }
 
 .box2 {
@@ -40,8 +39,7 @@
 }
 
 .box2:hover {
-  background: #f45b69;
-  opacity: 70%;
+  background: #e24e5a;
 }
 
 .box3 {
@@ -60,8 +58,7 @@
 }
 
 .box3:hover {
-  background: #ff784f;
-  opacity: 70%;
+  background: #f86b41;
 }
 
 .quiz-box {
@@ -80,8 +77,7 @@
 }
 
 .quiz-box:hover {
-  background: #a846a0;
-  opacity: 70%;
+  background: #a4349b;
 }
 
 .cat {

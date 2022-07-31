@@ -20,7 +20,7 @@ const Game3 = () => {
   return (
     <>
       <div>
-        <Heading>Game3: Drag and Drop Match Game </Heading>
+        <Heading>Drag and Drop Match Game </Heading>
         <h2>Ready to test your skills after three lessons?</h2>
         <Text>
           Match the animal name and colour in Polish with the animal image .

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { postFeedback } from "./LingozillaService";
 import { FaStar } from "react-icons/fa";
-import "./FeedbackStarRating.css";
+import "./feedback-star-rating.css";
 
 const Form = styled.form`
   text-align: center;
