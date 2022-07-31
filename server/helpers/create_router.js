@@ -79,7 +79,6 @@ const createRouter = function (collection) {
 
     return router;
 
-
-}
+};
 
 module.exports = createRouter;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import "./Timerv2.css";
+import "./timerv2.css";
 
 const ProgressBarContainer = styled.div`
   width: 100%;

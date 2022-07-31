@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { lessonTwo } from "../data/data";
 import Timerv2 from "./Timerv2";
 import styled from "styled-components";
-import "./Game2.css";
+import "./game2.css";
 
 const Game2Container = styled.div`
   align-items: center;

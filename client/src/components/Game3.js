@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { lessonOne } from "../data/data";
 import { lessonTwo } from "../data/data";
 import WordInPl from "./WordInPl";
-import "./Game3.css";
 import ColourInPl from "./ColourInPl";
-import Board from "./board";
+import Board from "./Board";
+import "./game3.css";
 import styled from "styled-components";
 
 const Heading = styled.h1`
@@ -16,6 +16,7 @@ const Text = styled.p`
 `;
 
 const Game3 = () => {
+  
   return (
     <>
       <div>

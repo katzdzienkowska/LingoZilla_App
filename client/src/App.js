@@ -52,7 +52,7 @@ function App() {
     speak({
       text: word,
       voice: voices[46],
-    }); // voice index number 46 is Polish lang
+    }); // PL lang/voice index position 46
   };
 
   useEffect(() => {
@@ -107,12 +107,11 @@ function App() {
               <FeedBackForm addFeedback={addFeedback} />
             </div>
           )}
-          {/* <FeedBackForm addFeedback={addFeedback} /> */}
           <Footer />
         </Router>
       </DndProvider>
     </div>
   );
-}
+};
 
 export default App;

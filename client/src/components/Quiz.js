@@ -6,10 +6,7 @@ import cat_img from '../images/cat.png'
 import rooster_img from '../images/rooster.png'
 import rabbit_img from '../images/rabbit.png'
 import turkey_img from '../images/turkey.png'
-import cow_img from '../images/cow.png'
 import pig_img from '../images/pig.png'
-import dog_img from '../images/dog.png'
-
 
 
 const Quiz = () => {
@@ -146,7 +143,6 @@ const Quiz = () => {
     };
 
 
-
     return (
 
         <div className='quiz'>
@@ -187,16 +183,13 @@ const Quiz = () => {
                                     {option.text}
                                 </li>
                             );
-                        })}
+                        })};
                     </ul>
                 </div>
-            )}
+            )};
         </div>
-    )
-}
-
-
-
+    );
+};
 
 
 export default Quiz;

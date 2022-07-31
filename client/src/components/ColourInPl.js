@@ -21,11 +21,6 @@ const ColourInPl = ({colour}) => {
         <Text>{colour.pl}</Text>
       </div>
     );
-} 
-
-
-
-
-
+};
 
 export default ColourInPl; 

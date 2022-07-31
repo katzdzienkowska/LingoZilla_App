@@ -8,7 +8,6 @@ import cow_img from '../images/cow.png'
 import pig_img from '../images/pig.png'
 import dog_img from '../images/dog.png'
 
-
 export const lessonOne = [
 
     {

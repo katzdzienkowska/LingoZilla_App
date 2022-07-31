@@ -5,14 +5,14 @@ db.feedback.insertMany([
   {
     name: "Oliver",
     ageGroup: "5 - 14 years old",
-    rating: "5",
+    rating: "5-stars",
     feedback: "krowa krooowaaa",
     date: "2022-05-29"
   },
   {
     name: "Lisa",
     ageGroup: "5 - 14 years old",
-    rating: "3",
+    rating: "1-star",
     feedback: "Cute animals, but Polish is hard",
     date: "2022-06-14"
   },

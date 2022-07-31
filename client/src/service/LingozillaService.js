@@ -2,7 +2,7 @@ const baseURL = 'http://localhost:9000/api/feedback';
 
 export const getFeedback = () => {
     return fetch(baseURL)
-        .then(res => res.json())
+        .then(res => res.json());
 };
 
 export const postFeedback = (feedback) => {
@@ -11,8 +11,7 @@ export const postFeedback = (feedback) => {
         body: JSON.stringify(feedback),
         headers: { 'Content-Type': 'application/json' }
     })
-        .then(res => res.json())
-
+        .then(res => res.json());
 };
 
 
@@ -28,5 +27,5 @@ export const updateFeedback = (feedback) => {
         body: JSON.stringify(feedback),
         headers: { 'Content-Type': 'application/json' }
     })
-        .then(res => res.json())
-}
+        .then(res => res.json());
+};
