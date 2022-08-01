@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { lessonTwo } from "../data/data";
 import Lesson2Item from "./Lesson2Item";
 import Game2 from "./Game2";
-import FeedBackForm from "./FeedBackForm";
 import styled from "styled-components";
 
 const Heading = styled.h1`
@@ -69,6 +68,7 @@ const Button2 = styled.button`
 
 const Paragraph = styled.p`
   font-size: 1.5rem;
+  margin-bottom: 10px;
 `;
 
 const Container = styled.div`

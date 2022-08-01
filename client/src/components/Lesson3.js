@@ -116,13 +116,13 @@ const Lesson3 = ({ textToSpeech }) => {
             grammar.
           </h2>
           <Paragraph>
-            Have a look at the images and their descriptions. First pair of
-            sentences describes what is the animal, in English and then in
-            Polish. The second pair tells you the colour of the animal.{" "}
+            Have a look at the images and their descriptions.
           </Paragraph>
           <Paragraph>
-            Hint! If you click on the Polish sentence, Zuzia will teach you how
-            to pronunce it correctly. Remember to turn on your volume!
+            First pair of sentences describes what is the animal, in English and then in Polish. The second pair tells you the colour of the animal.
+          </Paragraph>
+          <Paragraph>
+            Hint! If you click on the Polish sentence, Zuzia will teach you how to pronunce it correctly. Remember to turn on your volume!
           </Paragraph>
         </div>
         <Container>

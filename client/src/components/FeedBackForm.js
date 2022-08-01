@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { postFeedback } from "./LingozillaService";
+import { postFeedback } from "../service/LingozillaService";
 import { FaStar } from "react-icons/fa";
 import "./feedback-star-rating.css";
 

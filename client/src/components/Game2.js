@@ -10,27 +10,13 @@ const Game2Container = styled.div`
 `;
 
 const Heading = styled.h1`
+  margin: 40px;
+  text-align: center;
   font-size: 5rem;
-`;
-
-const Button = styled.button`
-  & {
-    padding: 20px;
-    width: 30%;
-    font-size: 20px;
-    background: #9d7bf4;
-    color: white;
-    border: 0;
-    outline: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  &:hover {
-    opacity: 0.9;
-    cursor: pointer;
-    background: #fe729b;
-  }
+  background-color: white;
+  padding: 2px;
+  border: 2px solid white;
+  border-radius: 40px;
 `;
 
 const Score = styled.span`
@@ -54,7 +40,7 @@ const Game2 = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [wordPrompt, setWordPrompt] = useState(null);
   const [imageSelections, setImageSelections] = useState([]);
-  const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
   const [wobble, setWobble] = useState(0);
 
   const randomizeImages = () => {
@@ -106,17 +92,17 @@ const Game2 = () => {
       <Heading>Match Race</Heading>
       <Text>
         Click the picture that matches the word! You get +1 point for every
-        correct answer.{" "}
+        correct answer.
       </Text>
       <Text>See how many points you can get in 30 seconds!</Text>
       <Text>
         Click "Show Game" to open the game then "Start Timer" to begin!
       </Text>
       <Text>Good luck! 🤞</Text>
-      <Button onClick={() => setVisible(!visible)}>
+      {/* <Button onClick={() => setVisible(!visible)}>
         {visible ? "Hide Game" : "Show Game"}
-      </Button>
-      <div style={{ display: visible ? "block" : "none" }}>
+      </Button> */}
+      <div>
         <div className="show-game">
           <Timerv2 initialMinutes={0} initialSeconds={30} />
           <Score>Total Score: {totalScore}</Score>

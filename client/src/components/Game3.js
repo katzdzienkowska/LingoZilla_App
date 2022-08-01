@@ -8,11 +8,18 @@ import "./game3.css";
 import styled from "styled-components";
 
 const Heading = styled.h1`
+  margin: 40px;
+  text-align: center;
   font-size: 5rem;
+  background-color: white;
+  padding: 2px;
+  border: 2px solid white;
+  border-radius: 40px;
 `;
 
 const Text = styled.p`
-  font-size: 1.5rem;
+font-size: 1.5rem;
+margin-bottom: 10px;
 `;
 
 const Game3 = () => {

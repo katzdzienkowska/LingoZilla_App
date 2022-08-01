@@ -170,7 +170,7 @@ const Quiz = () => {
                         Question: {currentQuestion + 1} out of {questions.length}
                     </h3>
 
-                    <img className='question-image' src={questions[currentQuestion].image}></img>
+                    <img className='question-image' src={questions[currentQuestion].image} alt='images used for questions'></img>
                     <h3 className='question-text'> {questions[currentQuestion].text}</h3>
 
                     {/* List of answers  */}
@@ -183,10 +183,10 @@ const Quiz = () => {
                                     {option.text}
                                 </li>
                             );
-                        })};
+                        })}
                     </ul>
                 </div>
-            )};
+            )}
         </div>
     );
 };

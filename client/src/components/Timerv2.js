@@ -91,7 +91,7 @@ const Timerv2 = ({ initialMinutes, initialSeconds }) => {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <ProgressBarContainer>
         <ProgressBar progress={progress} />
       </ProgressBarContainer>

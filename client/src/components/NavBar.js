@@ -32,7 +32,6 @@ const NavBar = () => {
     <Container>
       <NavLinks>
         <StyledLink to="/"> Home </StyledLink>
-
         <NavLinks>
           <StyledLink to="/lesson1"> Lesson 1 </StyledLink>
         </NavLinks>
@@ -45,7 +44,6 @@ const NavBar = () => {
         <NavLinks>
           <StyledLink to="/quiz"> Quiz </StyledLink>
         </NavLinks>
-
         <StyledLink to="/testimonies"> Testimonies </StyledLink>
       </NavLinks>
     </Container>

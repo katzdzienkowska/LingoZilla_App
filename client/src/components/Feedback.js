@@ -25,7 +25,7 @@ const Feedback = ({ feedback }) => {
           {feedback.ageGroup}
         </Text>
         <Text>
-          <strong>Rating:</strong>{" "}
+          <strong>Rating:</strong>
           {[...Array(numberToDisplay)].map((star) => {
             return <FaStar color="#FFC107" />;
           })}

@@ -13,7 +13,7 @@ function BackToTopButton() {
                 setBackToTopButton(false)
             }
         })
-    }, [])
+    }, []);
 
     const scrollUp = () => {
         window.scrollTo({
@@ -21,7 +21,7 @@ function BackToTopButton() {
             behavior: "smooth"
 
         })
-    }
+    };
 
     return <div >
 
@@ -31,11 +31,6 @@ function BackToTopButton() {
             </button>
         )}
     </div>
-
-
-
-
-}
-
+};
 
 export default BackToTopButton;
