@@ -2,9 +2,13 @@
 
 # LingoZilla - MERN Full-Stack App
 
-**Project:** LingoZilla - An educational language app helping kids learn Polish through fun games and quizzes
+**Project:** Group Project build in 10th week of the CodeClan Course.
 
-**Group:** Moath Al-Zoubi, Jack Carmichael, Sandy Yu and Kat Zdzienkowska
+<p>LingoZilla - An educational language app helping kids learn Polish through fun games and quizzes</p>
+
+**Group:** 
+
+<p>Moath Al-Zoubi, Jack Carmichael, Sandy Yu and Kat Zdzienkowska</p>
 
 <br/>
 
