@@ -2,7 +2,7 @@
 
 # LingoZilla - MERN Full-Stack App
 
-**Project:** Group Project build in 10th week of the CodeClan Course.
+**Project:** Group Project built in the 10th week of the CodeClan Course.
 
 <p>LingoZilla - An educational language app helping kids learn Polish through fun games and quizzes</p>
 
