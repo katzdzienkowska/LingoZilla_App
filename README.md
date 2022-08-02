@@ -42,29 +42,36 @@ The BBC are looking to improve their online offering of educational content by d
 
 ## To run the app follow the steps below:
 
-- Clone the repository
+Clone the repository
 
-- npm install
+In the server directory:
+
+- Install npm package:
 
 ```sh
 npm install
 ``` 
 
-- Go to the server directory and:
-
-- Seed the database
+- Seed the database:
 
 ```sh
 npm run seeds
 ```
 
-- Run server
+- Run the server:
 
 ```sh
 npm run server:dev
 ```
 
-- Go to the client directory and:
+In the client directory:
+
+- Install npm package:
+
+```sh
+npm install
+``` 
+- Run on the browser:
 
 ```sh
 npm start
