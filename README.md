@@ -12,6 +12,12 @@
 
 <br/>
 
+## App Running:
+
+![screen-gif](./client/src/images/LingoZilla.gif)
+
+<br/>
+
 ## Project Brief:
 
 <h3>Educational App</h3>
