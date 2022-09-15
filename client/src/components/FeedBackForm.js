@@ -132,6 +132,7 @@ const FeedBackForm = ({ addFeedback }) => {
             type="text"
             id="name"
             name="name"
+            autoComplete="off"
             value={formData.name}
           />
         </div>
